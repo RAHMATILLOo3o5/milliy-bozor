@@ -1,0 +1,15 @@
+.ribbon {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 1;
+    overflow: hidden;
+    width: 35px;
+    height: 45px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    opacity: 0.9;
+    background-color: #000;
+    font-size: 1.8em;
+}
