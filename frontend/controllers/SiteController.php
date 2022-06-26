@@ -338,12 +338,14 @@ class SiteController extends Controller
             throw new BadRequestHttpException($e->getMessage());
         }
         if (($user = $model->verifyEmail()) && Yii::$app->user->login($user)) {
-            Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Sizning elektron pochtangiz tasdiqlandi! Davom etishingiz mumkin!'));
             return $this->redirect(['user']);
+        } else {
+            $user->delete();
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Kechirasiz, taqdim etilgan token yordamida hisobingizni tasdiqlay olmaymadik.'));
+            return $this->goHome();
         }
 
-        Yii::$app->session->setFlash('error', 'Sorry, we are unable to verify your account with provided token.');
-        return $this->goHome();
     }
 
     /**

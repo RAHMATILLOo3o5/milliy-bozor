@@ -29,11 +29,11 @@ class VerifyEmailForm extends Model
     public function __construct($token, array $config = [])
     {
         if (empty($token) || !is_string($token)) {
-            throw new InvalidArgumentException('Verify email token cannot be blank.');
+            throw new InvalidArgumentException(\Yii::t('app', 'Noaniq token mumkin emas!.'));
         }
         $this->_user = User::findByVerificationToken($token);
         if (!$this->_user) {
-            throw new InvalidArgumentException('Wrong verify email token.');
+            throw new InvalidArgumentException(\Yii::t('app', 'Token noto\'g\'ri.'));
         }
         parent::__construct($config);
     }
