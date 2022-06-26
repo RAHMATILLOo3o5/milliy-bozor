@@ -47,6 +47,7 @@ class Message extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['message', 'required'],
             [['chat_id', 'from', 'status', 'created_at', 'updated_at'], 'integer'],
             [['message'], 'string'],
             [['image'], 'file', 'extensions' => 'png, jpg, jpeg', 'maxFiles' => 3, 'maxSize' => 1024 * 1024 * 2],

@@ -32,7 +32,7 @@ use yii\helpers\Url;
         </div>
         <div class="chat-form">
             <?php $form = \yii\widgets\ActiveForm::begin([
-                'action' => Url::to(['/message/send-message']),
+                'action' => Url::to(['/message/send']),
                 'options' => [
                     'class' => 'form-inline',
                     'id' => 'chat-form',
@@ -51,11 +51,11 @@ use yii\helpers\Url;
                     <?= $form->field($model, 'image')->fileInput(['class' => 'file', 'id' => 'message-file'])->label(false); ?>
                 </label>
                 </span>
-                <?= $form->field($model, 'message')->textInput(['placeholder' => Yii::t('app', 'Xabar yozish...'), 'id' => 'message-text'])->label(false); ?>
+                <?= $form->field($model, 'message')->textInput(['placeholder' => Yii::t('app', 'Xabar yozish...'), 'id' => 'chat-text', 'autocomplete'=>'off'])->label(false); ?>
                 <span class="input-group-append">
-                <label class="btn btn-primary disabled send" data-toggle="tooltip" data-placement="top" title="Jo'natish">
+                <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Jo'natish">
                     <i class="fa fa-paper-plane"></i>
-                    <input type="submit" class="file" id="submit" value="Send">
+                    <input type="submit" class="file"  value="Send">
                 </label>
                 </span>
             </div>
