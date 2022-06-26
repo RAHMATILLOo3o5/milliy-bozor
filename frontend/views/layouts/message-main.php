@@ -31,9 +31,7 @@ $section = Section::find()->andWhere(['status' => 1])->orderBy(['id' => SORT_DES
 
         </style>
     </head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-            crossorigin="anonymous"></script>
+
     <body>
     <?php $this->beginBody() ?>
     <div class="container-fluid">

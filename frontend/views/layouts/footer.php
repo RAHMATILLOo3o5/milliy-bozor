@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 
 ?>
+<div class="danger p-4 mb-4"></div>
 <div class="footer my-sm-5">
     <div class="px-lg-6">
         <div class="row">
@@ -71,3 +72,6 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>

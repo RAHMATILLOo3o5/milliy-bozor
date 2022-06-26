@@ -492,74 +492,86 @@ $this->title = Yii::$app->name;
 <div class="danger p-3" width="100%">
     <div class="px-lg-6">
         <div class="row justify-content-center">
-            <div class="col-md-6 offset-md-3">
-                <h1 class="ml-2"><b><?= Yii::t('app', 'Premium E’lonlar') ?></b></h1>
+            <div class="col-md-6 text-center">
+                <h1 class=""><b><?= Yii::t('app', 'Premium E’lonlar') ?></b></h1>
                 <nav>
-                    <div class="nav nav-tabs border-0" id="product" role="tablist">
-                        <a class="nav-link active" id="top-product-tab" data-toggle="tab" href="#top-product" role="tab"
-                           aria-controls="top-product" aria-selected="true">
-                            <?= Yii::t('app', 'TOP tovarlar') ?>
-                        </a>
-                        <a class="nav-link" id="new-product-tab" data-toggle="tab" href="#new-product" role="tab"
-                           aria-controls="new-product" aria-selected="false">
-                            <?= Yii::t('app', 'Yangi tovarlar') ?>
-                        </a>
-                        <a class="nav-link" id="old-product-tab" data-toggle="tab" href="#old-product" role="tab"
-                           aria-controls="old-product" aria-selected="false">
-                            <?= Yii::t('app', 'Eski tovarlar') ?>
-                        </a>
+                    <div class="nav nav-tabs border-0 row justify-content-center" id="product" role="tablist">
+                        <div class="col-4">
+                            <a class="nav-link active" id="top-product-tab" data-toggle="tab" href="#top-product"
+                               role="tab"
+                               aria-controls="top-product" aria-selected="true">
+                                <?= Yii::t('app', 'TOP tovarlar') ?>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="nav-link" id="new-product-tab" data-toggle="tab" href="#new-product"
+                               role="tab"
+                               aria-controls="new-product" aria-selected="false">
+                                <?= Yii::t('app', 'Yangi tovarlar') ?>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="nav-link" id="old-product-tab" data-toggle="tab" href="#old-product"
+                               role="tab"
+                               aria-controls="old-product" aria-selected="false">
+                                <?= Yii::t('app', 'Eski tovarlar') ?>
+                            </a>
+                        </div>
                     </div>
                 </nav>
             </div>
         </div>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="top-product" role="tabpanel" aria-labelledby="top-product-tab">
-                <div class="row">
-                    <?= ListView::widget([
-                        'dataProvider' => $topProduct,
-                        'itemView' => '_product',
-                        'layout' => "{items}",
-                        'options' => [
-                            'class' => 'd-sm-flex flex-wrap justify-content-start'
-                        ],
-                        'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+                <?= ListView::widget([
+                    'dataProvider' => $topProduct,
+                    'itemView' => '_product',
+                    'layout' => "{items}",
+                    'options' => [
+                        'class' => 'row justify-content-center my-2 my-sm-5'
+                    ],
+                    'itemOptions' => [
+                        'class' => 'col-md-3'
+                    ],
+                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                        'summary' => false
-                    ]) ?>
-                </div>
+                    'summary' => false
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="new-product-tab">
-                <div class="row">
-                    <?= ListView::widget([
-                        'dataProvider' => $newProduct,
-                        'itemView' => '_product',
-                        'layout' => "{items}",
-                        'options' => [
-                            'class' => 'd-sm-flex flex-wrap justify-content-start'
-                        ],
-                        'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+                <?= ListView::widget([
+                    'dataProvider' => $newProduct,
+                    'itemView' => '_product',
+                    'layout' => "{items}",
+                    'options' => [
+                        'class' => 'row justify-content-center my-2 my-sm-5'
+                    ],
+                    'itemOptions' => [
+                        'class' => 'col-md-3'
+                    ],
+                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                        'summary' => false
-                    ]) ?>
-                </div>
+                    'summary' => false
+                ]) ?>
             </div>
             <div class="tab-pane fade" id="old-product" role="tabpanel" aria-labelledby="old-product-tab">
-                <div class="row">
-                    <?= ListView::widget([
-                        'dataProvider' => $oldProduct,
-                        'itemView' => '_product',
-                        'layout' => "{items}",
-                        'options' => [
-                            'class' => 'd-sm-flex flex-wrap justify-content-start'
-                        ],
-                        'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+                <?= ListView::widget([
+                    'dataProvider' => $oldProduct,
+                    'itemView' => '_product',
+                    'layout' => "{items}",
+                    'options' => [
+                        'class' => 'row justify-content-center my-2 my-sm-5'
+                    ],
+                    'itemOptions' => [
+                        'class' => 'col-md-3'
+                    ],
+                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                        'summary' => false
-                    ]) ?>
-                </div>
+                    'summary' => false
+                ]) ?>
             </div>
 
         </div>
@@ -620,7 +632,8 @@ $this->title = Yii::$app->name;
                                             <p>
                                                 <?= $message[$i]->body ?>
                                             </p>
-                                            <h5><b class="text-danger font-weight-bold"><?= $message[$i]->name ?></b></h5>
+                                            <h5><b class="text-danger font-weight-bold"><?= $message[$i]->name ?></b>
+                                            </h5>
                                             <b><?= $message[$i]->job ?></b>
                                         </div>
                                     </div>

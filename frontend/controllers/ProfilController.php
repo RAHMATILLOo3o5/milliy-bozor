@@ -2,7 +2,12 @@
 
 namespace frontend\controllers;
 
+use common\models\Like;
+use common\models\Product;
 use common\models\Seen;
+use common\models\View;
+use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 
 class ProfilController extends \yii\web\Controller
@@ -29,7 +34,48 @@ class ProfilController extends \yii\web\Controller
     {
         $seen = new Seen();
         $seen->updated();
-        return $this->render('index');
+        $likeProduct = new ActiveDataProvider([
+            'query' => Like::find()->andWhere(['user_id' => Yii::$app->user->id]),
+            'pagination' => [
+                'pageSize' => 9
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
+        ]);
+        $lastSeen = new ActiveDataProvider([
+            'query' => View::find()->andWhere(['user_id' => Yii::$app->user->id]),
+            'pagination' => [
+                'pageSize' => 9
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'created_at' => SORT_DESC
+                ]
+            ]
+        ]);
+        $myAds = new ActiveDataProvider([
+            'query' => Product::find()->andWhere(['user_id' => Yii::$app->user->id]),
+            'pagination' => [
+                'pageSize' => 9
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
+        ]);
+        $search = new ActiveDataProvider([
+            'query'=>Product::find()->andWhere(['status'=>0])
+        ]);
+        return $this->render('index', [
+            'like' => $likeProduct,
+            'view' => $lastSeen,
+            'myAds'=>$myAds,
+            'search'=>$search
+        ]);
     }
 
 }

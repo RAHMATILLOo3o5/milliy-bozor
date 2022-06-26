@@ -22,13 +22,8 @@ use yii\widgets\Pjax;
                     <?= $model->shortname; ?>
                 </h4>
             </a>
-            <a href="<?= Url::to(['/component/like', 'id' => $model->id]) ?>" class="card-link like ml-lg-5"
-               data-toggle="tooltip" data-placement="right" title="Saralanganlarga qo'shish">
-                <i class="fa fa-heart like-active <?php if (!Yii::$app->user->isGuest && Like::findOne(['user_id' => Yii::$app->user->id, 'product_id' => $model->id]) !== null) {
-                    echo 'active';
-                } else {
-                    echo '';
-                } ?>"></i>
+            <a href="<?= Url::to(['/product/updated', 'id' => $model->slug]) ?>" class="card-link" data-toggle="tooltip" data-placement="right" title="<?= Yii::t('app', 'Tahrirlash') ?>">
+                <i class="fa-solid fa-pen text-primary"></i>
             </a>
         </div>
         <b> <?= $model->user->province->name ?> <i class=" fa-solid fa-location-dot"></i></b>

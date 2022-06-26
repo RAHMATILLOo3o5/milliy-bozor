@@ -112,7 +112,7 @@ class ProductController extends \yii\web\Controller
         if ($this->request->isPost && $model->load(Yii::$app->request->post()) && $user->load(Yii::$app->request->post())) {
             $model->status = 1;
             $user->update();
-            $model->saved($model);
+            $model->updated($model);
             return $this->redirect(['product/index']);
         }
         return $this->render('updated', [

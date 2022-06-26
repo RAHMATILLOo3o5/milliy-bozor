@@ -19,8 +19,7 @@ class MessageAsset extends AssetBundle
         'plugins/popper.js/dist/popper.js',
         'plugins/fontawesome-free/js/all.js',
         'plugins/bootstrap/dist/js/bootstrap.js',
-        'js/message.js',
-        'js/app.js',
+        'js/message1.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
