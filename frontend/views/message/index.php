@@ -1,3 +1,16 @@
+<?php
+
+/**
+ * @var $this \yii\web\View
+ * @var $messages \common\models\Message[]
+ */
+
+use yii\helpers\Url;
+use yii\widgets\Pjax;
+
+$this->title = Yii::t('app', 'Xabarlarim') . ' - Milliy Bozor';
+?>
+
 <style>
     .chat-info {
         background-color: #F21515 !important;
@@ -7,23 +20,28 @@
         border: none !important;
         height: 400px !important;
     }
-    .chat-list_rooms a{
+
+    .chat-list_rooms a {
         color: #0c0c0d !important;
         text-decoration: none !important;
     }
-    .chat-list_rooms a .chat-list_content{
+
+    .chat-list_rooms a .chat-list_content {
         transition: all 0.3s ease-in-out;
     }
-    .chat-list_rooms a .chat-list_content:hover{
+
+    .chat-list_rooms a .chat-list_content:hover {
         color: #fffacd !important;
         text-decoration: none !important;
         background: #ff1c1c !important;
     }
-    .chat-list_rooms a .active{
+
+    .chat-list_rooms a .active {
         color: #fffacd !important;
         text-decoration: none !important;
         background: #ff1c1c !important;
     }
+
     .chat-column-left .chat-profile {
         background-color: #F21515 !important;
     }
@@ -46,91 +64,57 @@
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </form>
                 <div class="chat-list_rooms">
-                    <a href="">
-                        <div class="chat-list_content">
-                            <div class="avatar text-center">
-                                <i class="fa fa-user mt-2" style="font-size: 25px"></i>
-                            </div>
-                            <div class="chat-list_content_description">
-                                <div class="chat-list_content_description_header">
-                                    <span>Иван Иванов</span>
-                                    <div class="chat-list_content_description_header_time"><span>10.12.2019</span>
-                                    </div>
-                                    <div class="chat-list_content_description_body">
-                                        <div class="chat-list_content_description_body_message"><span>Lorem ipsum dolor sit amet.</span>
+                    <?php if ($messages) : foreach ($messages as $message) : if ($message->to == Yii::$app->user->id) : ?>
+                        <a href="<?= Url::to(['message/select', 'id' => $message->message->chat_id]) ?>"
+                           class="select_user">
+                            <div class="chat-list_content">
+                                <div class="avatar text-center">
+                                    <i class="fa fa-user mt-2" style="font-size: 25px"></i>
+                                </div>
+                                <div class="chat-list_content_description">
+                                    <div class="chat-list_content_description_header">
+                                        <span><?= $message->from0->username ?></span>
+                                        <div class="chat-list_content_description_header_time ml-1">
+                                            <small style="font-size: 12px"><?= $message->message->created ?></small>
                                         </div>
-                                        <div class="chat-list_content_description_body_badge">
-                                            <span>3</span>
+                                        <div class="chat-list_content_description_body">
+                                            <div class="chat-list_content_description_body_message">
+                                                <span><?= $message->message->message ?></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    <?php else: ?>
+                        <a href="<?= Url::to(['message/select', 'id' => $message->message->chat_id]) ?>"
+                           class="select_user">
+                            <div class="chat-list_content">
+                                <div class="avatar text-center">
+                                    <i class="fa fa-user mt-2" style="font-size: 25px"></i>
+                                </div>
+                                <div class="chat-list_content_description">
+                                    <div class="chat-list_content_description_header">
+                                        <span><?= $message->to0->username ?></span>
+                                        <div class="chat-list_content_description_header_time ml-1">
+                                            <small style="font-size: 12px"><?= $message->message->created ?></small>
+                                        </div>
+                                        <div class="chat-list_content_description_body">
+                                            <div class="chat-list_content_description_body_message">
+                                                <span><?= $message->message->message ?></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endif; endforeach; endif; ?>
                 </div>
             </div>
         </div>
-        <div class="chat-column-right">
-            <div class="chat-info">
-                <div class="chat-info_user">
-                    <div class="chat-info_user_fullname">Иван Иванов</div>
-                    <div class="chat-info_user_last_visit">Был в сети 34 минут</div>
-                </div>
-            </div>
-            <div class="chat-message">
-                <div class="chat-message_content interlocutor-message">
-                    <div class="chat-message_content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        unde
-                        laboriosam facilis esse a rem pariatur sequi doloribus corporis doloremque?
-                    </div>
-                    <div class="chat-message_content_date">
-                        10.12.2019
-                    </div>
-                </div>
-                <div class="chat-message_content own-message">
-                    <div class="chat-message_content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        unde
-                        laboriosam facilis esse a rem pariatur sequi doloribus corporis doloremque?
-                    </div>
-                    <div class="chat-message_content_date">
-                        10.12.2019
-                    </div>
-                </div>
-                <div class="chat-message_content interlocutor-message">
-                    <div class="chat-message_content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        unde
-                        laboriosam facilis esse a rem pariatur sequi doloribus corporis doloremque?
-                    </div>
-                    <div class="chat-message_content_date">
-                        10.12.2019
-                    </div>
-                </div>
-                <div class="chat-message_content own-message">
-                    <div class="chat-message_content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        unde
-                        laboriosam facilis esse a rem pariatur sequi doloribus corporis doloremque?
-                    </div>
-                    <div class="chat-message_content_date">
-                        10.12.2019
-                    </div>
-                </div>
-            </div>
-            <div class="chat-form">
-                <form action="#" class="form-inline">
-                    <div class="input-group w-100">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text">
+            <?php Pjax::begin(['id' => 'chat-message']) ?>
+            <?= $this->render('_messages', compact('model', 'private_chat')) ?>
+            <?php Pjax::end() ?>
 
-                                <i class="fa fa-file"></i>
-                            </label>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                        <div class="input-group-append">
-                            <span class="input-group-text">.00</span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 </div>

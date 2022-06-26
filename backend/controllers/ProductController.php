@@ -61,7 +61,7 @@ class ProductController extends AllowsController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
-                $model->img = UploadedFile::getInstance($model, 'img');
+                $model->img = UploadedFile::getInstances($model, 'img');
                 if (!empty($model->img)) {
                     $i = 1;
                     $img = [];

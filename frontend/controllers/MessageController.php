@@ -33,9 +33,35 @@ class MessageController extends \yii\web\Controller
     {
         $this->layout = 'message-main';
         $messages = Chat::find()->orWhere(['from' => Yii::$app->user->id])->orWhere(['to' => Yii::$app->user->id])->all();
+        $model = new Message();
+        $private_chat = null;
         return $this->render('index', [
             'messages' => $messages,
+            'model' => $model,
+            'private_chat' => $private_chat,
         ]);
+    }
+
+    public function actionSelect($id)
+    {
+        $chat = Chat::findOne($id);
+        $model = new Message();
+        $data = [
+            'status' => 500,
+            'content' => 0,
+        ];
+        if (Yii::$app->request->isAjax) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if ($chat) {
+                $data['status'] = 200;
+                $data['content'] = $this->renderAjax('_messages', [
+                    'model' => $model,
+                    'private_chat' => $chat,
+                ]);
+                return $data;
+            }
+        }
+
     }
 
     public function actionSend()

@@ -143,6 +143,9 @@ class OfferController extends AllowsController
      */
     public function actionDelete($id)
     {
+        if ($this->findModel($id)->img == '02.png') {
+            $this->findModel($id)->delete();
+        }
         unlink(Yii::getAlias('@saveimg') . '/' . $this->findModel($id)->img);
         $this->findModel($id)->delete();
         return $this->redirect(['index']);

@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\StringHelper;
 use yii\web\UploadedFile;
 
 /**
@@ -78,6 +79,11 @@ class Message extends \yii\db\ActiveRecord
     public function saved($model)
     {
         $model->image = UploadedFile::getInstances($model, 'image');
+        if ($model->from == Yii::$app->user->id) {
+            $model->status = 1;
+        } else {
+            $model->status = 0;
+        }
         if ($model->image) {
             $i = 1;
             $img = [];
@@ -114,6 +120,18 @@ class Message extends \yii\db\ActiveRecord
     public function getChat()
     {
         return $this->hasOne(Chat::class, ['id' => 'chat_id']);
+    }
+
+    public function getCreated()
+    {
+        return date('d.m.Y', $this->created_at);
+    }
+    public function getTime(){
+        return date('H:i d.m.Y');
+    }
+    public function getShortMessage()
+    {
+        return StringHelper::truncate($this->message, 2);
     }
 
     /**

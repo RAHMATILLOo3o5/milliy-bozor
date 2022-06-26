@@ -19,6 +19,7 @@ class MessageAsset extends AssetBundle
         'plugins/popper.js/dist/popper.js',
         'plugins/fontawesome-free/js/all.js',
         'plugins/bootstrap/dist/js/bootstrap.js',
+        'js/message2.js',
         'js/app.js',
     ];
     public $depends = [

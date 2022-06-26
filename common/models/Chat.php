@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "chat".
@@ -69,6 +70,11 @@ class Chat extends \yii\db\ActiveRecord
         return $this->id;
     }
 
+    public function getMessage()
+    {
+        return end($this->messages);
+    }
+
     /**
      * Gets query for [[From0]].
      *
@@ -77,6 +83,42 @@ class Chat extends \yii\db\ActiveRecord
     public function getFrom0()
     {
         return $this->hasOne(User::class, ['id' => 'from']);
+    }
+
+    public function getRenderMessage()
+    {
+        $messages = $this->messages;
+        foreach ($messages as $message) {
+            if ($message->status == 0) {
+                if ($message->image != '') {
+                    echo '<div class="chat-message_content interlocutor-message">
+                            <div class="chat-message_content_text">
+                            <img src="' . Yii::getAlias('@getimg') . '/' . $message->image . '" class="img-fluid">
+                            ' . $message->message . '
+                            </div>
+                            <div class="chat-message_content_date">' . $message->time . '</div>
+                           </div>';
+                } else {
+                    echo '<div class="chat-message_content interlocutor-message">
+                            <div class="chat-message_content_text">' . $message->message . '</div>
+                            <div class="chat-message_content_date">' . $message->time . '</div>
+                           </div>';
+                }
+            } else {
+                if ($message->image != '') {
+                    echo '<div class="chat-message_content own-message" >
+                        <div class="chat-message_content_text" ><img src="' . Yii::getAlias('@getimg') . '/' . $message->image . '" class="img-fluid">
+                            ' . $message->message . '</div >
+                        <div class="chat-message_content_date" >' . $message->time . '</div >
+                     </div >';
+                } else {
+                    echo '<div class="chat-message_content own-message" >
+                        <div class="chat-message_content_text" >' . $message->message . '</div >
+                        <div class="chat-message_content_date" >' . $message->time . '</div >
+                     </div >';
+                }
+            }
+        }
     }
 
     /**
