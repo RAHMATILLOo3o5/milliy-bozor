@@ -45,7 +45,7 @@ class VerifyEmail extends \yii\base\Model
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
         Yii::$app->session->setFlash('success', Yii::t('app', 'Ro\'yhatdan o\'tganinggiz uchun rahmat! Tasdiqlash xabari elektron pochtangizga jo\'natdik. Bu bir oz vaqt olishi mumkin!'));
-        return $user->save() && $this->sendEmail($user);
+        return $this->sendEmail($user) && $user->save();
     }
 
     /**

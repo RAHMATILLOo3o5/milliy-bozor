@@ -76,6 +76,17 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    public function getShortName()
+    {
+
+        if (strlen($this->username) > 8) {
+            return substr($this->username, 0, 8) . '...';
+        } else {
+            return $this->username;
+        }
+
+    }
+
     public function getProvince()
     {
         return $this->hasOne(Province::class, ['id' => 'province_id']);
@@ -90,7 +101,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $viloyat = strtolower(explode(' ', $this->province->name)[0]);
         $tuman = strtolower(explode(' ', $this->tuman->name)[0]);
-        $map = $viloyat  .' '. $tuman;
+        $map = $viloyat . ' ' . $tuman;
         return urlencode($map);
     }
 

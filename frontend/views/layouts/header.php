@@ -45,7 +45,7 @@ $lan = Yii::$app->params['language'];
                             <div class="header">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <div class="id">
-                                    <p class="title"><?= Yii::$app->user->identity->username ?></p>
+                                    <p class="title"><?= Yii::$app->user->identity->shortName ?></p>
                                     <div class="subtitle">id: <?= Yii::$app->user->id ?></div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ $lan = Yii::$app->params['language'];
                                     <div class="header">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         <div class="id">
-                                            <p class="title"><?= Yii::$app->user->identity->username ?></p>
+                                            <p class="title"><?= Yii::$app->user->identity->shortName ?></p>
                                             <div class="subtitle">id: <?= Yii::$app->user->id ?></div>
                                         </div>
                                     </div>
