@@ -43,15 +43,9 @@ $this->title = Yii::$app->name;
                                         <div class="danger rounded-top p-2">
                                             <nav>
                                                 <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab"
-                                                       href="#nav-home" role="tab"
-                                                       aria-controls="nav-home" aria-selected="true">Sotish</a>
-                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab"
-                                                       href="#nav-profile" role="tab"
-                                                       aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
-                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab"
-                                                       href="#nav-contact" role="tab"
-                                                       aria-controls="nav-contact" aria-selected="false">Xizmat</a>
+                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sotish</a>
+                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
+                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Xizmat</a>
                                                 </div>
                                             </nav>
                                         </div>
@@ -59,12 +53,10 @@ $this->title = Yii::$app->name;
                                     <div class="col-12">
                                         <div class="danger" style="border-bottom-left-radius: 10px;">
                                             <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                                     aria-labelledby="nav-home-tab">
+                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -74,8 +66,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -84,19 +75,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                                     aria-labelledby="nav-profile-tab">
+                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -106,8 +94,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -116,19 +103,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                                     aria-labelledby="nav-contact-tab">
+                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -138,8 +122,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -148,8 +131,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
@@ -181,15 +163,9 @@ $this->title = Yii::$app->name;
                                         <div class="danger rounded-top p-2">
                                             <nav>
                                                 <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab"
-                                                       href="#nav-home" role="tab"
-                                                       aria-controls="nav-home" aria-selected="true">Sotish</a>
-                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab"
-                                                       href="#nav-profile" role="tab"
-                                                       aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
-                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab"
-                                                       href="#nav-contact" role="tab"
-                                                       aria-controls="nav-contact" aria-selected="false">Xizmat</a>
+                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sotish</a>
+                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
+                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Xizmat</a>
                                                 </div>
                                             </nav>
                                         </div>
@@ -197,12 +173,10 @@ $this->title = Yii::$app->name;
                                     <div class="col-12">
                                         <div class="danger" style="border-bottom-left-radius: 10px;">
                                             <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                                     aria-labelledby="nav-home-tab">
+                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -212,8 +186,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -222,19 +195,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                                     aria-labelledby="nav-profile-tab">
+                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -244,8 +214,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -254,19 +223,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                                     aria-labelledby="nav-contact-tab">
+                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -276,8 +242,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -286,8 +251,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
@@ -319,15 +283,9 @@ $this->title = Yii::$app->name;
                                         <div class="danger rounded-top p-2">
                                             <nav>
                                                 <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab"
-                                                       href="#nav-home" role="tab"
-                                                       aria-controls="nav-home" aria-selected="true">Sotish</a>
-                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab"
-                                                       href="#nav-profile" role="tab"
-                                                       aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
-                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab"
-                                                       href="#nav-contact" role="tab"
-                                                       aria-controls="nav-contact" aria-selected="false">Xizmat</a>
+                                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sotish</a>
+                                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sotib olish</a>
+                                                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Xizmat</a>
                                                 </div>
                                             </nav>
                                         </div>
@@ -335,12 +293,10 @@ $this->title = Yii::$app->name;
                                     <div class="col-12">
                                         <div class="danger" style="border-bottom-left-radius: 10px;">
                                             <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                                     aria-labelledby="nav-home-tab">
+                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -350,8 +306,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -360,19 +315,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                                     aria-labelledby="nav-profile-tab">
+                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -382,8 +334,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -392,19 +343,16 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                                     aria-labelledby="nav-contact-tab">
+                                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                                     <div class="row p-3">
                                                         <div class="col-md-2">
-                                                            <label for="viloyat" class="text-secondary">Viloyat <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="viloyat" class="text-secondary">Viloyat <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="viloyat">
                                                                 <option value="">Toshkent</option>
@@ -414,8 +362,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <label for="vKurs" class="text-secondary">Pul birligi <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Pul birligi <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <select name="" class=" form-control" id="vKurs">
                                                                 <option value="">UZS</option>
@@ -424,8 +371,7 @@ $this->title = Yii::$app->name;
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <label for="vKurs" class="text-secondary">Narxlar <i
-                                                                        class="fa fa-sort-down"></i>
+                                                            <label for="vKurs" class="text-secondary">Narxlar <i class="fa fa-sort-down"></i>
                                                             </label>
                                                             <p>1.00-5.00 mln UZS</p>
                                                         </div>
@@ -449,14 +395,13 @@ $this->title = Yii::$app->name;
     if (isset($section) && Yii::$app->language == 'uz') :
         echo '<div class="row border rounded p-lg-2">';
         foreach ($section as $s) :
-            ?>
+    ?>
             <div class="col-sm-3">
                 <div class="danger rounded text-center py-5">
                     <a href="<?= Url::to(['/product/index', 'section' => $s->id]) ?>" class="text-white">
                         <h4>
                             <b>
-                                <img src="<?= Url::base() ?>/img/<?= $s->img ?>" class="rounded-circle" width="30px"
-                                     height="30px">
+                                <img src="<?= Url::base() ?>/img/<?= $s->img ?>" class="rounded-circle" width="30px" height="30px">
                                 <?= $s->name_uz ?>
                             </b>
                         </h4>
@@ -470,53 +415,40 @@ $this->title = Yii::$app->name;
     if (isset($section) && Yii::$app->language == 'ru') :
         echo '<div class="row border rounded p-lg-2">';
         foreach ($section as $s) :
-            ?>
+        ?>
             <div class="col-sm-3">
                 <div class="danger rounded text-center py-5">
                     <a href="<?= Url::to(['/product/index', 'section' => $s->id]) ?>" class="text-white">
                         <h4>
                             <b>
-                                <img src="<?= Url::base() ?>/img/<?= $s->img ?>" class="rounded-circle" width="30px"
-                                     height="30px">
+                                <img src="<?= Url::base() ?>/img/<?= $s->img ?>" class="rounded-circle" width="30px" height="30px">
                                 <?= $s->name_ru ?>
                             </b>
                         </h4>
                     </a>
                 </div>
             </div>
-        <?php
+    <?php
         endforeach;
         echo '</div>';
     endif; ?>
 </div>
-<div class="danger pb-3 my-1" >
+<div class="danger pb-3 my-1">
     <div class="px-lg-6">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
                 <h1 class=""><b><?= Yii::t('app', 'Premium E’lonlar') ?></b></h1>
                 <nav>
                     <div class="nav nav-tabs border-0 row justify-content-center" id="product" role="tablist">
-                        <div class="col-4">
-                            <a class="nav-link active" id="top-product-tab" data-toggle="tab" href="#top-product"
-                               role="tab"
-                               aria-controls="top-product" aria-selected="true">
-                                <?= Yii::t('app', 'TOP tovarlar') ?>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="nav-link" id="new-product-tab" data-toggle="tab" href="#new-product"
-                               role="tab"
-                               aria-controls="new-product" aria-selected="false">
-                                <?= Yii::t('app', 'Yangi tovarlar') ?>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="nav-link" id="old-product-tab" data-toggle="tab" href="#old-product"
-                               role="tab"
-                               aria-controls="old-product" aria-selected="false">
-                                <?= Yii::t('app', 'Eski tovarlar') ?>
-                            </a>
-                        </div>
+                        <a class="nav-link active" id="top-product-tab" data-toggle="tab" href="#top-product" role="tab" aria-controls="top-product" aria-selected="true">
+                            <?= Yii::t('app', 'TOP tovarlar') ?>
+                        </a>
+                        <a class="nav-link" id="new-product-tab" data-toggle="tab" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">
+                            <?= Yii::t('app', 'Yangi tovarlar') ?>
+                        </a>
+                        <a class="nav-link" id="old-product-tab" data-toggle="tab" href="#old-product" role="tab" aria-controls="old-product" aria-selected="false">
+                            <?= Yii::t('app', 'Eski tovarlar') ?>
+                        </a>
                     </div>
                 </nav>
             </div>
@@ -524,8 +456,7 @@ $this->title = Yii::$app->name;
         <div class="row">
             <div class="col-12">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="top-product" role="tabpanel"
-                         aria-labelledby="top-product-tab">
+                    <div class="tab-pane fade show active" id="top-product" role="tabpanel" aria-labelledby="top-product-tab">
                         <?= ListView::widget([
                             'dataProvider' => $topProduct,
                             'itemView' => '_product',

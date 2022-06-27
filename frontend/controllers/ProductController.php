@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use backend\models\Category;
 use common\models\Message;
 use common\models\Product;
 use frontend\models\search\ProductQuery;
@@ -10,6 +11,7 @@ use common\models\TopTime;
 use common\models\User;
 use common\models\View;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 
 class ProductController extends \yii\web\Controller
@@ -33,7 +35,10 @@ class ProductController extends \yii\web\Controller
     public function actionIndex()
     {
         $product = (new ProductQuery())->search($this->request->queryParams);
-        return $this->render('index', compact('product'));
+        $category = new ActiveDataProvider([
+            'query' => Category::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])
+        ]);
+        return $this->render('index', compact('product', 'category'));
     }
 
     public function actionView($id)
