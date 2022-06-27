@@ -27,7 +27,7 @@ class VerifyEmail extends \yii\base\Model
 
             [
                 ['captcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::class,
-                'secret' => '6Le_XUsgAAAAACA85qaRfREOiHZTHeAOdzGOD3jG',
+                'secret' => '6Le6-qIgAAAAANFZM-kAkEtVe7G49Av1bFntmBJb',
                 'uncheckedMessage' => 'Robot emasligingizni tasdiqlang.'
             ],
         ];
