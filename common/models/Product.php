@@ -154,9 +154,11 @@ class Product extends \yii\db\ActiveRecord
     /**
      * @return mixed|null
      */
-    public function getViewCount(){
-        return View::findOne(['product_id'=>$this->id])->view_count;
+    public function getViewCount()
+    {
+        return View::findOne(['product_id' => $this->id])->view_count;
     }
+
     public function updated($model)
     {
         $this->img = UploadedFile::getInstances($model, 'img');
@@ -188,9 +190,14 @@ class Product extends \yii\db\ActiveRecord
     /**
      * @return string
      */
-    public function getShortname(){
-        return StringHelper::truncateWords($this->name, 1, $suffix = '...', $asHtml = true);
+    public function getShortname()
+    {
+        if (strlen($this->name) > 6) {
+            return StringHelper::truncate($this->name, 6);
+        }
+        return $this->name;
     }
+
     /**
      * Gets query for [[Category]].
      *

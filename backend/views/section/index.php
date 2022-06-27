@@ -23,67 +23,67 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php // echo $this->render('_search', ['model' => $searchModel]);
         ?>
+        <div class="table-responsive">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-
-                // 'id',
-                'name_uz',
-                'name_ru',
-                [
-                    'attribute' => 'status',
-                    'format' => 'html',
-                    'filter' => [
-                        '1' => 'Faol',
-                        '0' => 'Nofaol'
+                    // 'id',
+                    'name_uz',
+                    'name_ru',
+                    [
+                        'attribute' => 'status',
+                        'format' => 'html',
+                        'filter' => [
+                            '1' => 'Faol',
+                            '0' => 'Nofaol'
+                        ],
+                        'value' => 'statusLabel'
                     ],
-                    'value' => 'statusLabel'
-                ],
-                [
-                    'attribute' => 'created_at',
-                    'filter' => false,
-                    'format' => 'datetime',
-                ],
-
-                //'updated_at',
-                [
-                    'class' => ActionColumn::class,
-                    'urlCreator' => function ($action, $model, $key, $index, $column) {
-                        return Url::toRoute([$action, 'id' => $model->id]);
-                    },
-                    'buttons' => [
-                        'view' => function ($url) {
-                            return Html::a('<i class="fa fa-eye"></i>', $url, [
-                                'class' => 'view-modal',
-                                'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Ko'rish"
-                            ]);
-                        },
-                        'update' => function ($url) {
-                            return Html::a('<i class="fa fa-pencil-alt"></i>', $url, [
-                                'class' => 'updated-modal',
-                                'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Yangilash"
-                            ]);
-                        },
-                        'delete' => function ($url) {
-                            return Html::a('<i class="fa fa-trash"></i>', $url, [
-                                'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "O'chirish",
-                                'data-method'=>'post'
-                            ]);
-                        }
+                    [
+                        'attribute' => 'created_at',
+                        'filter' => false,
+                        'format' => 'datetime',
                     ],
 
-                ],
-            ],
-            'pager' => [
-                'class' => LinkPager::class,
-                'maxButtonCount' => 5,
-            ],
-        ]);
+                    //'updated_at',
+                    [
+                        'class' => ActionColumn::class,
+                        'urlCreator' => function ($action, $model, $key, $index, $column) {
+                            return Url::toRoute([$action, 'id' => $model->id]);
+                        },
+                        'buttons' => [
+                            'view' => function ($url) {
+                                return Html::a('<i class="fa fa-eye"></i>', $url, [
+                                    'class' => 'view-modal',
+                                    'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Ko'rish"
+                                ]);
+                            },
+                            'update' => function ($url) {
+                                return Html::a('<i class="fa fa-pencil-alt"></i>', $url, [
+                                    'class' => 'updated-modal',
+                                    'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "Yangilash"
+                                ]);
+                            },
+                            'delete' => function ($url) {
+                                return Html::a('<i class="fa fa-trash"></i>', $url, [
+                                    'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "O'chirish",
+                                    'data-method' => 'post'
+                                ]);
+                            }
+                        ],
 
-        ?>
+                    ],
+                ],
+                'pager' => [
+                    'class' => LinkPager::class,
+                    'maxButtonCount' => 5,
+                ],
+            ]); ?>
+
+        </div>
     </div>
 <?php
 Modal::begin([
@@ -95,7 +95,7 @@ Modal::begin([
 ]);
 
 echo '<div class="render-form p-sm-3">
- '. Spinner::widget(['preset' => 'medium', 'align' => 'center', 'color' => 'blue']) .'
+ ' . Spinner::widget(['preset' => 'medium', 'align' => 'center', 'color' => 'blue']) . '
 </div>';
 
 Modal::end();

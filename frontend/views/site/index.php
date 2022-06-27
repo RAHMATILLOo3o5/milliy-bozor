@@ -489,7 +489,7 @@ $this->title = Yii::$app->name;
         echo '</div>';
     endif; ?>
 </div>
-<div class="danger p-3" width="100%">
+<div class="danger pb-3 my-1" >
     <div class="px-lg-6">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
@@ -521,59 +521,71 @@ $this->title = Yii::$app->name;
                 </nav>
             </div>
         </div>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="top-product" role="tabpanel" aria-labelledby="top-product-tab">
-                <?= ListView::widget([
-                    'dataProvider' => $topProduct,
-                    'itemView' => '_product',
-                    'layout' => "{items}",
-                    'options' => [
-                        'class' => 'row justify-content-center my-2 my-sm-5'
-                    ],
-                    'itemOptions' => [
-                        'class' => 'col-md-3'
-                    ],
-                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="top-product" role="tabpanel"
+                         aria-labelledby="top-product-tab">
+                        <?= ListView::widget([
+                            'dataProvider' => $topProduct,
+                            'itemView' => '_product',
+                            'layout' => "{items}",
+                            'options' => [
+                                'class' => 'row justify-content-center my-2 my-sm-5'
+                            ],
+                            'itemOptions' => [
+                                'class' => 'col-md-4 p-md-5'
+                            ],
+                            'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                    'summary' => false
-                ]) ?>
-            </div>
-            <div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="new-product-tab">
-                <?= ListView::widget([
-                    'dataProvider' => $newProduct,
-                    'itemView' => '_product',
-                    'layout' => "{items}",
-                    'options' => [
-                        'class' => 'row justify-content-center my-2 my-sm-5'
-                    ],
-                    'itemOptions' => [
-                        'class' => 'col-md-3'
-                    ],
-                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+                            'summary' => false
+                        ]) ?>
+                    </div>
+                    <div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="new-product-tab">
+                        <?= ListView::widget([
+                            'dataProvider' => $newProduct,
+                            'itemView' => '_product',
+                            'layout' => "{items}",
+                            'options' => [
+                                'class' => 'row justify-content-center my-2 my-sm-5'
+                            ],
+                            'itemOptions' => [
+                                'class' => 'col-md-4 p-md-5'
+                            ],
+                            'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                    'summary' => false
-                ]) ?>
-            </div>
-            <div class="tab-pane fade" id="old-product" role="tabpanel" aria-labelledby="old-product-tab">
-                <?= ListView::widget([
-                    'dataProvider' => $oldProduct,
-                    'itemView' => '_product',
-                    'layout' => "{items}",
-                    'options' => [
-                        'class' => 'row justify-content-center my-2 my-sm-5'
-                    ],
-                    'itemOptions' => [
-                        'class' => 'col-md-3'
-                    ],
-                    'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
+                            'summary' => false
+                        ]) ?>
+                    </div>
+                    <div class="tab-pane fade" id="old-product" role="tabpanel" aria-labelledby="old-product-tab">
+                        <?= ListView::widget([
+                            'dataProvider' => $oldProduct,
+                            'itemView' => '_product',
+                            'layout' => "{items}",
+                            'options' => [
+                                'class' => 'row justify-content-center my-2 my-sm-5'
+                            ],
+                            'itemOptions' => [
+                                'class' => 'col-md-4 p-md-5'
+                            ],
+                            'emptyText' => '<div class="col-lg-12  text-center py-sm-5">
                             <h4 class=" ml-sm-5 text-center">' . Yii::t('app', 'Hech qanday e\'lon qo\'shilmagan!') . '😥</h4>
                             </div>',
-                    'summary' => false
-                ]) ?>
+                            'summary' => false
+                        ]) ?>
+                    </div>
+                </div>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="<?= Url::to(['/product/']) ?>" class="btn btn-light btn-app px-5">
+                    <?= Yii::t('app', 'all') ?>
+                    <i class="fa fa-arrow-alt-circle-right text-danger"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>

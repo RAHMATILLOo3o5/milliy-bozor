@@ -162,6 +162,8 @@ class SiteController extends Controller
      */
     public function actionObuna()
     {
+        $seen = new Seen();
+        $seen->updated();
         $dticket = Dayticket::find()->where(['status' => 1])->all();
         $mticket = Monthticket::find()->where(['status' => 1])->all();
         return $this->render('obuna', compact('dticket', 'mticket'));

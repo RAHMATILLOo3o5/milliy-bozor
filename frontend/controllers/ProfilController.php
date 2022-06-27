@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\models\Like;
 use common\models\Product;
 use common\models\Seen;
+use common\models\TopTime;
 use common\models\View;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -32,8 +33,14 @@ class ProfilController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        $seen = new Seen();
-        $seen->updated();
+        if (!Yii::$app->user->isGuest) {
+            $seen = new Seen();
+            $seen->updated();
+
+            $dt = new TopTime();
+            $dt->check(Yii::$app->user->id);
+        }
+
         $likeProduct = new ActiveDataProvider([
             'query' => Like::find()->andWhere(['user_id' => Yii::$app->user->id]),
             'pagination' => [
@@ -68,14 +75,23 @@ class ProfilController extends \yii\web\Controller
             ]
         ]);
         $search = new ActiveDataProvider([
-            'query'=>Product::find()->andWhere(['status'=>0])
+            'query' => Product::find()->andWhere(['status' => 0])
         ]);
         return $this->render('index', [
             'like' => $likeProduct,
             'view' => $lastSeen,
-            'myAds'=>$myAds,
-            'search'=>$search
+            'myAds' => $myAds,
+            'search' => $search
         ]);
+    }
+
+    public function actionClear()
+    {
+        if (Like::deleteAll(['user_id' => Yii::$app->user->id])) {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+        Yii::$app->session->setFlash('danger', Yii::t('app', 'O\'chirib bo\'lmadi'));
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
 }

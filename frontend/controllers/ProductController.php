@@ -4,13 +4,13 @@ namespace frontend\controllers;
 
 use common\models\Message;
 use common\models\Product;
+use frontend\models\search\ProductQuery;
+use common\models\Seen;
+use common\models\TopTime;
 use common\models\User;
 use common\models\View;
 use Yii;
-use yii\helpers\VarDumper;
-use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
-use yii\web\UploadedFile;
 
 class ProductController extends \yii\web\Controller
 {
@@ -19,7 +19,7 @@ class ProductController extends \yii\web\Controller
         return [
             'access' => [
                 'class' => \yii\filters\AccessControl::class,
-                'only' => ['index', 'new-product'],
+                'only' => ['new-product'],
                 'rules' => [
                     [
                         'allow' => true,
@@ -32,7 +32,8 @@ class ProductController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $product = (new ProductQuery())->search($this->request->queryParams);
+        return $this->render('index', compact('product'));
     }
 
     public function actionView($id)
@@ -54,6 +55,14 @@ class ProductController extends \yii\web\Controller
 
     public function actionNewProduct()
     {
+        if (!Yii::$app->user->isGuest) {
+            $seen = new Seen();
+            $seen->updated();
+
+            $dt = new TopTime();
+            $dt->check(Yii::$app->user->id);
+        }
+
         $model = new Product();
         $user = User::findOne(Yii::$app->user->id);
         if ($user->is_top == 1) {
@@ -82,6 +91,13 @@ class ProductController extends \yii\web\Controller
 
     public function actionBeforeSave($id)
     {
+        if (!Yii::$app->user->isGuest) {
+            $seen = new Seen();
+            $seen->updated();
+
+            $dt = new TopTime();
+            $dt->check(Yii::$app->user->id);
+        }
         $model = $this->findModel($id);
         $model->img = explode(',', $model->img);
         return $this->render('before-save', [
@@ -91,6 +107,13 @@ class ProductController extends \yii\web\Controller
 
     public function actionSave($id)
     {
+        if (!Yii::$app->user->isGuest) {
+            $seen = new Seen();
+            $seen->updated();
+
+            $dt = new TopTime();
+            $dt->check(Yii::$app->user->id);
+        }
         $model = $this->findModel($id);
         $model->status = 1;
         $model->save();
@@ -106,6 +129,13 @@ class ProductController extends \yii\web\Controller
 
     public function actionUpdated($id)
     {
+        if (!Yii::$app->user->isGuest) {
+            $seen = new Seen();
+            $seen->updated();
+
+            $dt = new TopTime();
+            $dt->check(Yii::$app->user->id);
+        }
         $model = $this->findModel($id);
         $model->img = explode(',', $model->img);
         $user = User::findOne(Yii::$app->user->id);

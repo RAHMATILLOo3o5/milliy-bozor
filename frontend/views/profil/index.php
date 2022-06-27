@@ -34,7 +34,7 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
                         <a class="nav-link" id="search-tab" data-toggle="tab" href="#search" role="tab"
                            aria-controls="search" aria-selected="false">
                             <b><?= Yii::t('app', 'Saralangan qidiruv natijalari') ?></b> <span
-                                    class="badge badge-warning"> <?=$search->count ?></span>
+                                    class="badge badge-warning"> <?= $search->count ?></span>
                         </a>
                         <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
                            aria-controls="nav-contact" aria-selected="false">
@@ -55,6 +55,13 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
 <div class="px-lg-6">
     <div class="tab-content my-2 my-sm-5">
         <div class="tab-pane fade show active" id="like" role="tabpanel" aria-labelledby="like-tab">
+            <div class="row">
+                <div class="col-12">
+                    <a href="<?= \yii\helpers\Url::to(['profil/clear']) ?>"
+                       class="btn btn-danger <?= ($like->count == 0) ? 'disabled' : ''; ?>"><i
+                                class="fa fa-trash-can"></i> <?= Yii::t('app', 'Tozalash') ?></a>
+                </div>
+            </div>
             <?= ListView::widget([
                 'dataProvider' => $like,
                 'itemView' => '_like',
@@ -66,6 +73,9 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
                 'itemOptions' => [
                     'class' => 'col-md-3'
                 ],
+                'pager' => [
+                    'class' => \yii\bootstrap4\LinkPager::class
+                ]
             ]); ?>
         </div>
 
@@ -81,6 +91,9 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
                 'itemOptions' => [
                     'class' => 'col-md-3'
                 ],
+                'pager' => [
+                    'class' => \yii\bootstrap4\LinkPager::class
+                ]
             ]); ?>
         </div>
 
@@ -96,6 +109,9 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
                 'itemOptions' => [
                     'class' => 'col-md-3'
                 ],
+                'pager' => [
+                    'class' => \yii\bootstrap4\LinkPager::class
+                ]
             ]); ?>
         </div>
 
@@ -111,6 +127,9 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
                 'itemOptions' => [
                     'class' => 'col-md-3'
                 ],
+                'pager' => [
+                    'class' => \yii\bootstrap4\LinkPager::class
+                ]
             ]); ?>
         </div>
     </div>

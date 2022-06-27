@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Chat;
 use common\models\Message;
+use common\models\Seen;
 use phpDocumentor\Reflection\Types\False_;
 use Yii;
 use yii\helpers\VarDumper;
@@ -31,6 +32,8 @@ class MessageController extends \yii\web\Controller
 
     public function actionIndex()
     {
+        $seen = new Seen();
+        $seen->updated();
         $this->layout = 'message-main';
         $messages = Chat::find()->orWhere(['from' => Yii::$app->user->id])->orWhere(['to' => Yii::$app->user->id])->all();
         $model = new Message();
@@ -44,6 +47,9 @@ class MessageController extends \yii\web\Controller
 
     public function actionSelect($id)
     {
+        $seen = new Seen();
+        $seen->updated();
+
         $chat = Chat::findOne($id);
         $model = new Message();
         $data = [

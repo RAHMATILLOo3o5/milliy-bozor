@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 ?>
 
 <div class="card shadow my-1 mx-5 my-sm-4 mx-md-0">
-    <img src="<?= $model->product->images[0] ?>" alt="" class="card-img-top" height="250px"/>
+    <img src="<?= $model->product->images[0] ?>" alt="" class="card-img-top" height="240px"/>
     <div class="ribbon <?= ($model->product->is_top == 0) ? 'd-none' : ''; ?>">
         <i class="fa fa-crown"></i>
     </div>
@@ -21,14 +21,6 @@ use yii\widgets\Pjax;
                 <h4>
                     <?= $model->product->shortname; ?>
                 </h4>
-            </a>
-            <a href="<?= Url::to(['/component/like', 'id' => $model->product->id]) ?>" class="card-link like ml-lg-5"
-               data-toggle="tooltip" data-placement="right" title="Saralanganlarga qo'shish">
-                <i class="fa fa-heart like-active <?php if (!Yii::$app->user->isGuest && Like::findOne(['user_id' => Yii::$app->user->id, 'product_id' => $model->product->id]) !== null) {
-                    echo 'active';
-                } else {
-                    echo '';
-                } ?>"></i>
             </a>
         </div>
         <b> <?= $model->product->user->province->name ?> <i class=" fa-solid fa-location-dot"></i></b>

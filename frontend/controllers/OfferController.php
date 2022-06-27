@@ -47,7 +47,7 @@ class OfferController extends Controller
     public function actionViewOffer($id)
     {
             if (!Yii::$app->user->isGuest) {
-                $seen = Seen::findOne(['user_id' => Yii::$app->user->id]);
+                $seen = new Seen();
                 $seen->updated();
 
                 $dt = new TopTime();
@@ -73,7 +73,7 @@ class OfferController extends Controller
     public function actionViewService($id)
     {
             if (!Yii::$app->user->isGuest) {
-                $seen = Seen::findOne(['user_id' => Yii::$app->user->id]);
+                $seen = new Seen();
                 $seen->updated();
 
                 $dt = new TopTime();
