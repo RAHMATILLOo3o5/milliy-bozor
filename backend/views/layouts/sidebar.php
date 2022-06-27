@@ -61,14 +61,6 @@ use yii\helpers\Url;
                     ['label' => 'Qo\'shimcha xizmatlar', 'url' => ['service/index'], 'icon' => 'calculator'],
                     ['label' => 'SAYT SOZLAMARI', 'header' => true],
                     ['label' => 'Banner', 'url' => ['banner/index'], 'icon' => 'image'],
-                    ['label' => 'Yii2 PROVIDED', 'header' => true],
-                    ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
-                    ['label' => 'Gii', 'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],
-                    ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
-                    ['label' => 'LABELS', 'header' => true],
-                    ['label' => 'Important', 'iconStyle' => 'far', 'iconClassAdded' => 'text-danger'],
-                    ['label' => 'Warning', 'iconClass' => 'nav-icon far fa-circle text-warning'],
-                    ['label' => 'Informational', 'iconStyle' => 'far', 'iconClassAdded' => 'text-info'],
                 ],
             ]);
             ?>
