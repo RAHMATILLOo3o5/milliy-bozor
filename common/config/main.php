@@ -12,10 +12,10 @@ return [
         ],
         'reCaptcha' => [
             'class' => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
-            'siteKeyV2' => '6Le_XUsgAAAAAA7D2o_2sXVY_u3iJ5HUXUGTymrJ',
-            'secretV2' => '6Le_XUsgAAAAACA85qaRfREOiHZTHeAOdzGOD3jG',
-            'siteKeyV3' => '6LckYy0gAAAAAFM1eJDq6JcC4QwLhqSrOUxlbuui',
-            'secretV3' => '6LckYy0gAAAAAKWgAlSI4N5OCpM_hVkX3Zr4EGpY',
+            'siteKeyV2' => '6Le6-qIgAAAAACOeRN6QfQI83kyn0e8hyfz_Ser9',
+            'secretV2' => '6Le6-qIgAAAAANFZM-kAkEtVe7G49Av1bFntmBJb',
+            'siteKeyV3' => '6LdK-qIgAAAAAKL2_92Q1o2LQyHbHPf5Tv9EyPOf',
+            'secretV3' => '6LdK-qIgAAAAAGup4DlxMvB8ofWcEq3FEbAL6aLL',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -24,10 +24,10 @@ return [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'encryption' => 'ssl',
-                'host' => 'smtp.mail.ru',
+                'host' => 'smtp.titan.email',
                 'port' => '465',
-                'username' => 'husanboyev05@mail.ru',
-                'password' => 'gNpf8tVXchQ7meZpEh6L',
+                'username' => 'bozor@milliy-bozor.com',
+                'password' => 'MilliyBozor',
             ],
         ],
     ],
