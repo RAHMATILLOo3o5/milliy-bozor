@@ -58,7 +58,7 @@ $this->title = $offer['title_' . Yii::$app->language] . " - Milliy Bozor";
     <div class="row my-4">
         <div class="col-md-8 offset-md-2">
             <div class="card mb-3">
-                <img class="card-img-top" src="<?= Url::base() . '/img/' . $offer['img'] ?>"
+                <img class="card-img-top" src="<?= Yii::getAlias('@getimg') . '/' . $offer['img'] ?>"
                      alt="<?= $offer['title_' . Yii::$app->language] ?> image">
                 <div class="card-body danger">
                     <h4 class="card-title"><?= $offer['title_' . Yii::$app->language] ?></h4>
