@@ -2,6 +2,8 @@
 
 namespace frontend\models;
 
+use backend\models\Category;
+use common\models\Product;
 use Yii;
 
 /**

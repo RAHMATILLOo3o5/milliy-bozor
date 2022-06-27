@@ -10,6 +10,7 @@ use common\models\Seen;
 use common\models\TopTime;
 use common\models\User;
 use common\models\View;
+use frontend\models\Section;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
@@ -34,11 +35,18 @@ class ProductController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        $product = (new ProductQuery())->search($this->request->queryParams);
+        $section = Section::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])->limit(6)->all();
+
+        $searchModel = new ProductQuery();
+        $product = $searchModel->search($this->request->queryParams);
         $category = new ActiveDataProvider([
             'query' => Category::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])
         ]);
-        return $this->render('index', compact('product', 'category'));
+        if ($this->request->isAjax){
+            $product = $searchModel->search($this->request->queryParams);
+            return $this->render('index', compact('product', 'category', 'section'));
+        }
+        return $this->render('index', compact('product', 'category', 'section'));
     }
 
     public function actionView($id)

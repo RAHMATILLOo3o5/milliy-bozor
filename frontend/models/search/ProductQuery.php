@@ -44,17 +44,7 @@ class ProductQuery extends Product
         $query = Product::find()->andWhere(['status' => 1]);
 
         // add conditions that should always apply here
-        $sort = new Sort([
-            'attributes' => [
-                'age',
-                'name' => [
-                    'asc' => ['first_name' => SORT_ASC, 'last_name' => SORT_ASC],
-                    'desc' => ['first_name' => SORT_DESC, 'last_name' => SORT_DESC],
-                    'default' => SORT_DESC,
-                    'label' => 'Name',
-                ],
-            ],
-        ]);
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
