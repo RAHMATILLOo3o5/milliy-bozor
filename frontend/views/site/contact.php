@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'reCaptcha')->widget(
                     \himiklab\yii2\recaptcha\ReCaptcha3::class,
                     [
-                        'siteKey' => '6LckYy0gAAAAAFM1eJDq6JcC4QwLhqSrOUxlbuui',
+                        'siteKey' => '6LdK-qIgAAAAAKL2_92Q1o2LQyHbHPf5Tv9EyPOf',
                         'action' => 'homepage',
                     ]
                 )->label(false) ?>
