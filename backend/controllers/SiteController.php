@@ -47,10 +47,10 @@ class SiteController extends AllowsController
                 if ($model->login()) {
                     return $this->goHome();
                 } else {
-                    return $this->redirect('http://milliy-bozor/');
+                    return $this->redirect('https://milliy-bozor.com/');
                 }
             } else {
-                return $this->redirect('http://milliy-bozor/');
+                return $this->redirect('https://milliy-bozor.com/');
             }
         }
         $model->password = '';
