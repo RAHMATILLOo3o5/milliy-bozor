@@ -4,6 +4,7 @@
 
 /* @var $content string */
 
+use backend\assets\AppAsset;
 use yii\helpers\Html;
 
 \hail812\adminlte3\assets\FontAwesomeAsset::register($this);
@@ -14,6 +15,7 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
 
 $publishedRes = Yii::$app->assetManager->publish('@vendor/hail812/yii2-adminlte3/src/web/js');
 $this->registerJsFile($publishedRes[1] . '/control_sidebar.js', ['depends' => '\hail812\adminlte3\assets\AdminLteAsset']);
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
