@@ -79,8 +79,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function getShortName()
     {
 
-        if (strlen($this->username) > 8) {
-            return substr($this->username, 0, 8) . '...';
+        if (strlen($this->username) > 10) {
+            return substr($this->username, 0, 10) . '...';
         } else {
             return $this->username;
         }
