@@ -20,7 +20,7 @@ $messages = Contact::findAll(['read' => 0]);
             <a href="<?= Url::to(['contact/index']) ?>" class="nav-link">Xabarlar</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="http://milliy-bozor/" target="_blank" class="nav-link">Saytni ko'rish</a>
+            <a href="https://milliy-bozor.com" target="_blank" class="nav-link">Saytni ko'rish</a>
         </li>
     </ul>
 
