@@ -47,7 +47,7 @@ $this->title = $service['title_' . Yii::$app->language] . " - Milliy Bozor";
     <div class="row my-4">
         <div class="col-md-8 offset-md-2">
             <div class="card mb-3">
-                <img class="card-img-top" src="<?= Url::base() . '/img/' . $service['img'] ?>" alt="Card image cap">
+                <img class="card-img-top" src="<?= Yii::getAlias('@getimg') . '/' . $service['img'] ?>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><?= $service['title_' . Yii::$app->language] ?></h4>
                         <p class="card-text"><?= $service['content_' . Yii::$app->language] ?></p>
