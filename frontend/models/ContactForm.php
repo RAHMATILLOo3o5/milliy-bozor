@@ -30,7 +30,7 @@ class ContactForm extends Model
             // verifyCode needs to be entered correctly
             [
                 ['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator3::class,
-                'secret' => '6LckYy0gAAAAAKWgAlSI4N5OCpM_hVkX3Zr4EGpY',
+                'secret' => '6LdK-qIgAAAAAGup4DlxMvB8ofWcEq3FEbAL6aLL',
                 'threshold' => 0.5,
                 'action' => 'homepage',
             ],
