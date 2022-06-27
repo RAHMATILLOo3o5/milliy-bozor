@@ -27,13 +27,6 @@ $this->title = Yii::t('app', 'login') . ' - Milliy Bozor';
 
             <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <? /*= $form->field($model, 'reCaptcha')->widget(
-                \himiklab\yii2\recaptcha\ReCaptcha3::class,
-                [
-                    'siteKey' => '6LckYy0gAAAAAFM1eJDq6JcC4QwLhqSrOUxlbuui',
-                    'action' => 'homepage',
-                ]
-            )->label(false)*/ ?>
 
             <?= $form->field($model, 'rememberMe')->checkbox()->label(Yii::t('app', 'Meni eslab qol!')) ?>
 
