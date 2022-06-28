@@ -125,7 +125,7 @@ return [
     'Rasmlar' => '',
     'Rukn..' => '',
     'Rukn:' => '',
-    'Sahifa topilmadi' => '@@@@',
+    'Sahifa topilmadi' => '',
     'Sahifa topilmadi!' => '',
     'Sale' => '',
     'Saqlash' => '',
