@@ -17,7 +17,7 @@ echo ListView::widget([
                   <h3 class="my-sm-5">' . Yii::t('app', 'E\'lonlar topilmadi') . '😥</h3>
            </div>',
     'itemOptions' => [
-        'class' => 'col-md-4 p-md-5 my-1 px-5'
+        'class' => 'col-md-12 p-md-5 my-1 px-5'
     ],
     'pager' => [
         'class' => \yii\bootstrap4\LinkPager::class,
