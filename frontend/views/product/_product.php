@@ -13,7 +13,7 @@ echo ListView::widget([
         'class' => 'row mt-md-4'
     ],
     'itemOptions' => [
-        'class' => 'col-md-4 p-md-5'
+        'class' => 'col-md-4 p-md-5 my-1 px-5'
     ],
     'pager' => [
         'class' => \yii\bootstrap4\LinkPager::class,

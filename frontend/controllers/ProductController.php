@@ -42,12 +42,74 @@ class ProductController extends \yii\web\Controller
         $category = new ActiveDataProvider([
             'query' => Category::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])
         ]);
-        if($this->request->get('section_id')){
-            $this->layout = false;
-            $section_id = $this->request->get('section_id');
-            $product = $searchModel->search($this->request->queryParams, $section_id);
+
+        if ($this->request->get('section')) {
+            $section_id = $this->request->get('section');
+            $product = new ActiveDataProvider([
+                'query' => Product::find()->where(['section_id' => $section_id])->orderBy(['id' => SORT_DESC]),
+                'pagination' => [
+                    'pageSize' => 12
+                ],
+            ]);
+        } else if ($this->request->get('price')) {
+            $product = new ActiveDataProvider([
+                'query' => Product::find()->where(['status' => '1'])->andWhere(['like', 'price', Yii::$app->request->get('price')]),
+                'pagination' => [
+                    'pageSize' => 12
+                ],
+            ]);
+        } else if ($this->request->get('caty_id')) {
+            $category_id = $this->request->get('caty_id');
+            $product = new ActiveDataProvider([
+                'query' => Product::find()->where(['category_id' => $category_id])->orderBy(['id' => SORT_DESC]),
+                'pagination' => [
+                    'pageSize' => 12
+                ],
+            ]);
+        } else if ($this->request->get('sort') ){
+            $sort = $this->request->get('sort');
+            if ($sort == 'SORT_DESC'){
+                $product = new ActiveDataProvider([
+                    'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_DESC]),
+                    'pagination' => [
+                        'pageSize' => 12
+                    ],
+                ]);
+            } else if ($sort == 'SORT_ASC'){
+                $product = new ActiveDataProvider([
+                    'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_ASC]),
+                    'pagination' => [
+                        'pageSize' => 12
+                    ],
+                ]);
+            } else if ($sort == 'PRICE_ASC'){
+                $product = new ActiveDataProvider([
+                    'query' => Product::find()->where(['status' => '1'])->orderBy(['price' => SORT_ASC]),
+                    'pagination' => [
+                        'pageSize' => 12
+                    ],
+                ]);
+            } else if ($sort == 'PRICE_DESC'){
+                $product = new ActiveDataProvider([
+                    'query' => Product::find()->where(['status' => '1'])->orderBy(['price' => SORT_DESC]),
+                    'pagination' => [
+                        'pageSize' => 12
+                    ],
+                ]);
+            }
+        } else {
+            $product = new ActiveDataProvider([
+                'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_DESC]),
+                'pagination' => [
+                    'pageSize' => 12
+                ],
+            ]);
+        }
+
+        if ($this->request->isAjax) {
             return $this->renderAjax('_product', ['product' => $product]);
         }
+
         return $this->render('index', compact('product', 'category', 'section'));
     }
 

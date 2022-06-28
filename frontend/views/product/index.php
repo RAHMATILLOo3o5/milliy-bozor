@@ -28,7 +28,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                 'options' => [
                     'placeholder' => Yii::t('app', 'Rukn..'),
                     'id' => 'section-product',
-                    'onchange' => '$.get("' . Url::to(['/product/index']) . '", {section_id: $(this).val()})
+                    'onchange' => '$.get("' . Url::to(['/product/index']) . '", {section: $(this).val()})
                         .done(function(data) {
                             $("#render-product").html(data);
                         });'
@@ -36,11 +36,26 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
             ]) ?>
         </div>
         <div class="col-lg-4">
-
             <label for="price" class="font-weight-bolder"><?= Yii::t('app', 'Narxi Sumda:') ?></label>
             <div class="d-flex">
-                <input type="text" class="form-control" id="price" placeholder="<?= Yii::t('app', '...dan') ?>"/>
-                <input type="text" class="form-control  ml-md-3" placeholder="..."/>
+                <?= Html::input('text', 'narx', null, [
+                    'placeholder' => Yii::t('app', '...dan'),
+                    'class' => 'form-control',
+                    'style' => 'box-shadow:none;',
+                    'onchange' => '
+                        $.post( "' . Url::to(['product/index']) . '?price="+$(this).val(), function( data ) {
+                            $("#render-product").html(data);
+                        });'
+                ]) ?>
+                <?= Html::input('text', 'narx', null, [
+                    'placeholder' => Yii::t('app', 'gacha'),
+                    'class' => 'form-control ml-3',
+                    'style' => 'box-shadow:none;',
+                    'onchange' => '
+                     $.post( "' . Url::to(['product/index']) . '?price="+$(this).val(), function( data ) {
+                       $("#render-product").html(data);
+                      });'
+                ]) ?>
             </div>
         </div>
         <div class="col-lg-2">
@@ -64,6 +79,12 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                         'SORT_ASC' => Yii::t('app', 'Eski'),
                         'PRICE_DESC' => Yii::t('app', 'Qimmat'),
                         'PRICE_ASC' => Yii::t('app', 'Arzon'),
+                    ],
+                    'options' => [
+                        'onchange' => '$.get("' . Url::to(['/product/index']) . '", {sort: $(this).val()})
+                            .done(function(data) {
+                                $("#render-product").html(data);
+                            });'
                     ]
                 ]) ?>
             </div>
@@ -86,7 +107,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
     <div class="row mt-md-4">
         <div class="col sorts">
             <?php if ($section) : foreach ($section as $s) : ?>
-                <a href="<?= Url::to(['product/index', 'section_id' => $s->id]) ?>"><b><?= $s->name_uz ?> <span
+                <a href="<?= Url::to(['product/index', 'section' => $s->id]) ?>"><b><?= $s->name_uz ?> <span
                                 class="text-danger"><?= count($s->products) ?></span></b>
                 </a>
             <?php endforeach;
