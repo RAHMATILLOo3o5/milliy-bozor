@@ -43,6 +43,7 @@ class ProductController extends \yii\web\Controller
             'query' => Category::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])
         ]);
         if($this->request->get('section_id')){
+            $this->layout = false;
             $section_id = $this->request->get('section_id');
             $product = $searchModel->search($this->request->queryParams, $section_id);
             return $this->renderAjax('_product', ['product' => $product]);

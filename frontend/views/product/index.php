@@ -30,7 +30,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                     'id' => 'section-product',
                     'onchange' => '$.get("' . Url::to(['/product/index']) . '", {section_id: $(this).val()})
                         .done(function(data) {
-                            $.pjax.reload("#render-product", {timeout : false});
+                            $("#render-product").html(data);
                         });'
                 ]
             ]) ?>
@@ -38,7 +38,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
         <div class="col-lg-4">
             <label for="price" class="font-weight-bolder"><?= Yii::t('app', 'Narxi Sumda:') ?></label>
             <div class="d-flex">
-                <input type="text" class="form-control " id="price" placeholder="<?= Yii::t('app', '...dan') ?>"/>
+                <input type="text" class="form-control" id="price" placeholder="<?= Yii::t('app', '...dan') ?>"/>
                 <input type="text" class="form-control  ml-md-3" placeholder="..."/>
             </div>
         </div>
@@ -93,6 +93,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
         </div>
     </div>
     <?php \yii\widgets\Pjax::begin(['id' => 'render-product']) ?>
-    <?= $this->renderAjax('_product', compact('product')) ?>
+    <?= $this->render('_product', compact('product')) ?>
     <?php \yii\widgets\Pjax::end(); ?>
 </div>
+
