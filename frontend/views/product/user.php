@@ -1,13 +1,13 @@
 <?php
 /**
- * @var $product \common\models\search\ProductQuery
+ * @var $users \common\models\User
  */
 
 use yii\widgets\ListView;
 
 echo ListView::widget([
-    'dataProvider' => $product,
-    'itemView' => '_items',
+    'dataProvider' => $users,
+    'itemView' => '_users',
     'layout' => "{items}\n{pager}",
     'options' => [
         'class' => 'row mt-md-4'

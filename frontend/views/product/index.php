@@ -64,7 +64,12 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                 'name' => 'province',
                 'data' => ArrayHelper::map(Province::find()->all(), 'id', 'name'),
                 'options' => [
-                    'placeholder' => Yii::t('app', 'Viloyat..')
+                    'placeholder' => Yii::t('app', 'Viloyat..'),
+                    'onchange' => '
+                        $.get("' . Url::to(['/product/index']) . '", {province: $(this).val()})
+                        .done(function(data) {
+                            $("#render-product").html(data);
+                        });'
                 ]
             ]) ?>
         </div>

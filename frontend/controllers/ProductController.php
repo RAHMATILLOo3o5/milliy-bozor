@@ -66,30 +66,30 @@ class ProductController extends \yii\web\Controller
                     'pageSize' => 12
                 ],
             ]);
-        } else if ($this->request->get('sort') ){
+        } else if ($this->request->get('sort')) {
             $sort = $this->request->get('sort');
-            if ($sort == 'SORT_DESC'){
+            if ($sort == 'SORT_DESC') {
                 $product = new ActiveDataProvider([
                     'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_DESC]),
                     'pagination' => [
                         'pageSize' => 12
                     ],
                 ]);
-            } else if ($sort == 'SORT_ASC'){
+            } else if ($sort == 'SORT_ASC') {
                 $product = new ActiveDataProvider([
                     'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_ASC]),
                     'pagination' => [
                         'pageSize' => 12
                     ],
                 ]);
-            } else if ($sort == 'PRICE_ASC'){
+            } else if ($sort == 'PRICE_ASC') {
                 $product = new ActiveDataProvider([
                     'query' => Product::find()->where(['status' => '1'])->orderBy(['price' => SORT_ASC]),
                     'pagination' => [
                         'pageSize' => 12
                     ],
                 ]);
-            } else if ($sort == 'PRICE_DESC'){
+            } else if ($sort == 'PRICE_DESC') {
                 $product = new ActiveDataProvider([
                     'query' => Product::find()->where(['status' => '1'])->orderBy(['price' => SORT_DESC]),
                     'pagination' => [
@@ -97,6 +97,16 @@ class ProductController extends \yii\web\Controller
                     ],
                 ]);
             }
+        } else if ($this->request->get('province')) {
+            $users = new ActiveDataProvider([
+                'query' => User::find()->where(['province_id' => Yii::$app->request->get('province'), 'status' => 10]),
+                'pagination' => [
+                    'pageSize' => 9
+                ]
+            ]);
+            return $this->renderAjax('user', [
+                'users' => $users,
+            ]);
         } else {
             $product = new ActiveDataProvider([
                 'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_DESC]),
