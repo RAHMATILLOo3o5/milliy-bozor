@@ -244,11 +244,15 @@ class SiteController extends Controller
         $model->username = $user->username;
         $model->email = $user->email;
         if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
-            if ($model->signup()) {
+            if ($model->signup() && Yii::$app->user->login($user, 3600 * 24 * 10)) {
                 $seen = new Seen();
                 $seen->saved();
                 Yii::$app->session->setFlash('success', Yii::t('app', '"Milliy Bozor" ga Hush Kelibsiz! 🤗'));
                 return $this->goBack();
+            } else {
+                $user->delete();
+                Yii::$app->session->setFlash('danger', Yii::t('app', 'Nimadur xato ketdi. Qaytadan urnib ko\'ring!'));
+                return $this->redirect(['site/signup']);
             }
         }
         return $this->render('user', compact('model'));
@@ -290,6 +294,7 @@ class SiteController extends Controller
             'policy' => $pol
         ]);
     }
+
     /**
      * Requests password reset.
      *
@@ -353,7 +358,7 @@ class SiteController extends Controller
         } catch (InvalidArgumentException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
-        if (($user = $model->verifyEmail()) && Yii::$app->user->login($user)) {
+        if ($user = $model->verifyEmail()) {
             Yii::$app->session->setFlash('success', Yii::t('app', 'Sizning elektron pochtangiz tasdiqlandi! Davom etishingiz mumkin!'));
             return $this->redirect(['user']);
         } else {

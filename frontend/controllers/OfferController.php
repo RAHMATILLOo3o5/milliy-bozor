@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use common\models\Offercoment;
+use common\models\OfferComent;
 use common\models\Seen;
 use common\models\Servicecoment;
 use common\models\TopTime;
@@ -10,10 +10,8 @@ use frontend\models\Offer;
 use frontend\models\Service;
 use Yii;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\helpers\Url;
 
 class OfferController extends Controller
 {
@@ -54,8 +52,8 @@ class OfferController extends Controller
                 $dt->check(Yii::$app->user->id);
             }
             $offer = Offer::find()->where(['id' => $id])->asArray()->one();
-            $coment = new Offercoment();
-            $allComent = Offercoment::find()->where(['offer_id' => $id])->all();
+            $coment = new OfferComent();
+            $allComent = OfferComent::find()->where(['offer_id' => $id])->all();
             if (Yii::$app->request->isPost) {
                 if ($coment->load($this->request->post())) {
                     if (!Yii::$app->user->isGuest) {
