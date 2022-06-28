@@ -8,7 +8,7 @@ use yii\helpers\Url;
 <div class="row">
     <?php foreach ($model->product as $k) : ?>
         <div class="col-md-4">
-            <div class="card md m-5" style="width: 18rem;">
+            <div class="card md m-3" style="width: 18rem;">
                 <img src="<?= $k->images[0] ?>" alt="" class="card-img-top imt" height="240px"/>
                 <div class="card-body">
                     <div class="card-title d-flex">
