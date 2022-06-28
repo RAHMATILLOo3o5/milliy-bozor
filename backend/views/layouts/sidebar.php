@@ -7,7 +7,7 @@ use yii\helpers\Url;
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= Url::home() ?>" class="brand-link">
-        <img src="<?= Yii::getAlias('@defaultImgPath') ?>/Logo.jpg"  class="brand-image img-circle elevation-3"
+        <img src="<?= Yii::getAlias('@defaultImgPath') ?>/Logo.jpg" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light"><?= Yii::$app->name ?></span>
     </a>
@@ -17,7 +17,8 @@ use yii\helpers\Url;
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?= Yii::getAlias('@defaultImgPath') ?>/user.png" class="img-circle elevation-2" alt="User Image">
+                <img src="<?= Yii::getAlias('@defaultImgPath') ?>/user.png" class="img-circle elevation-2"
+                     alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?= Yii::$app->user->identity->username ?></a>
@@ -50,18 +51,20 @@ use yii\helpers\Url;
                             ['label' => 'Asosiy', 'url' => ['site/index'], 'iconStyle' => 'far'],
                         ]
                     ],
-                    ['label'=>'OBUNALAR', 'header'=>true],
-                    ['label'=>'Kunlik obunalar', 'url'=>['dayticket/index'], 'icon'=>'clipboard'],
-                    ['label'=>'Oylik obunalar', 'url'=>['monthticket/index'], 'icon'=>'moon'],
+                    ['label' => 'OBUNALAR', 'header' => true],
+                    ['label' => 'Kunlik obunalar', 'url' => ['dayticket/index'], 'icon' => 'clipboard'],
+                    ['label' => 'Oylik obunalar', 'url' => ['monthticket/index'], 'icon' => 'moon'],
                     ['label' => 'MAHSULOTLAR', 'header' => true],
                     ['label' => 'Bo\'limalar', 'url' => ['section/index'], 'icon' => 'layer-group'],
                     ['label' => 'Kategoriyalar', 'url' => ['category/index'], 'icon' => 'th-large'],
-                    ['label'=>'E\'lonlar', 'url'=>['product/index'], 'icon'=>'bullhorn'],
+                    ['label' => 'E\'lonlar', 'url' => ['product/index'], 'icon' => 'bullhorn'],
                     ['label' => 'Maxsus takliflar', 'url' => ['offer/index'], 'icon' => 'coffee'],
                     ['label' => 'Qo\'shimcha xizmatlar', 'url' => ['service/index'], 'icon' => 'calculator'],
                     ['label' => 'SAYT SOZLAMARI', 'header' => true],
                     ['label' => 'Banner', 'url' => ['banner/index'], 'icon' => 'image'],
                     ['label' => 'Pastki qism', 'url' => ['footer/index'], 'icon' => 'arrow-down'],
+                    ['label' => 'Foydalanish shartlari', 'url' => ['site/term'], 'icon' => 'users'],
+                    ['label' => 'Maxfiylik siyosati', 'url' => ['site/policy'], 'iconStyle'=>'fas', 'icon' => 'hand-point-up']
                 ],
             ]);
             ?>

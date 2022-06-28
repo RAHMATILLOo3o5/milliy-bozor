@@ -12,9 +12,11 @@ use common\models\TopTime;
 use common\models\User;
 use common\models\VerifyEmail;
 use frontend\models\Offer;
+use frontend\models\Policy;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\Section;
 use frontend\models\Service;
+use frontend\models\Terms;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
@@ -276,6 +278,18 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * @return string
+     */
+    public function actionTerm()
+    {
+        $model = Terms::find()->orderBy(['id' => SORT_DESC])->asArray()->one();
+        $pol = Policy::find()->orderBy(['id' => SORT_DESC])->asArray()->one();
+        return $this->render('term', [
+            'term' => $model,
+            'policy' => $pol
+        ]);
+    }
     /**
      * Requests password reset.
      *
