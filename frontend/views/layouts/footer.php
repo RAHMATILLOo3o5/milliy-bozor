@@ -20,7 +20,7 @@ $footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
                 </div>
             </div>
             <div class="col-md-3">
-                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5">Help</h5>
+                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5"><?= Yii::t('app', 'Yordam') ?></h5>
                 <ul class="list-unstyled mx-4 footer-bar">
                     <li>
                         <a href="<?= Url::to(['/site/term']) ?>#v-pills-profile"><?= Yii::t('app', 'Maxfiylik siyosati') ?></a>
@@ -37,7 +37,7 @@ $footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
                 </ul>
             </div>
             <div class="col-md-3">
-                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5">Store</h5>
+                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5"><?= Yii::t('app', 'Do\'kon') ?></h5>
                 <ul class="list-unstyled mx-4 footer-bar">
                     <li>
                         <a href="<?= Url::to(['/product/index']) ?>"><?= Yii::t('app', 'Mebellar') ?></a>
@@ -51,7 +51,7 @@ $footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
                 </ul>
             </div>
             <div class="col-md-3">
-                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5">Supports</h5>
+                <h5 class="font-weight-bold text-black-50 my-3 mx-4 mt-5"><?= Yii::t('app', 'Qo\'llab-quvvatlash') ?></h5>
                 <ul class="list-unstyled mx-4 footer-bar">
                     <li>
                         <a href="<?= Url::to(['/site/contact']) ?>"><?= Yii::t('app', 'Fikr-mulohaza') ?></a>
