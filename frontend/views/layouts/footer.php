@@ -1,6 +1,10 @@
 <?php
 
+use frontend\models\Footer;
 use yii\helpers\Url;
+
+$icon = Footer::find()->where(['status' => 1])->one();
+$footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
 
 ?>
 <div class="danger p-4 mb-4"></div>
@@ -8,17 +12,11 @@ use yii\helpers\Url;
     <div class="px-lg-6">
         <div class="row">
             <div class="col-md-3">
-                <img src="<?= Yii::getAlias('@defaultImgPath') ?>/Component 1.svg" alt="logo" class="my-2 w-50">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores voluptatum odit debitis
-                    earum
-                    nihil rerum numquam aut perspiciatis illum eum voluptatibus libero error totam commodi nisi vitae,
-                    dolores
-                    non!</p>
+                <a href="<?= Url::home() ?>"><img src="<?= Yii::getAlias('@defaultImgPath') ?>/Component 1.svg"
+                                                  alt="logo" class="my-2 w-50"></a>
+                <p><?= $footer['text_' . Yii::$app->language] ?></p>
                 <div class="footer-icons">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <?= $icon->contact ?>
                 </div>
             </div>
             <div class="col-md-3">
