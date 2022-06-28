@@ -101,7 +101,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                 'dataProvider' => $category,
                 'itemView' => '_category',
                 'options' => [
-                    'class' => 'sorts my-4 d-lg-flex justify-content-lg-around'
+                    'class' => 'sorts my-4 row justify-content-lg-around'
                 ],
                 'emptyText' => '',
                 'layout' => "{items}\n",
