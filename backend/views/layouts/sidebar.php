@@ -61,7 +61,7 @@ use yii\helpers\Url;
                     ['label' => 'Qo\'shimcha xizmatlar', 'url' => ['service/index'], 'icon' => 'calculator'],
                     ['label' => 'SAYT SOZLAMARI', 'header' => true],
                     ['label' => 'Banner', 'url' => ['banner/index'], 'icon' => 'image'],
-                    ['label' => 'Footer', 'url' => ['footer/index'], 'icon' => 'foot'],
+                    ['label' => 'Pastki qism', 'url' => ['footer/index'], 'icon' => 'arrow-down'],
                 ],
             ]);
             ?>
