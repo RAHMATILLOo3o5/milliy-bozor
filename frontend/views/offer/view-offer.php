@@ -114,9 +114,7 @@ $this->title = $offer['title_' . Yii::$app->language] . " - Milliy Bozor";
                                             <p class="comment-text"><?= $c->content ?></p>
                                         </div>
                                     </div>
-                                <?php endforeach;
-                            else : ?>
-                            <?php endif; ?>
+                                <?php endforeach; endif; ?>
                             <?php $form = ActiveForm::begin() ?>
                             <div class="bg-light p-2">
                                 <div class="d-flex flex-row align-items-start p-3">
