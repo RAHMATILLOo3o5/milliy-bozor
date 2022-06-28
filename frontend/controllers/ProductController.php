@@ -42,9 +42,10 @@ class ProductController extends \yii\web\Controller
         $category = new ActiveDataProvider([
             'query' => Category::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])
         ]);
-        if ($this->request->isAjax){
-            $product = $searchModel->search($this->request->queryParams);
-            return $this->render('index', compact('product', 'category', 'section'));
+        if($this->request->get('section_id')){
+            $section_id = $this->request->get('section_id');
+            $product = $searchModel->search($this->request->queryParams, $section_id);
+            return $this->renderAjax('_product', ['product' => $product]);
         }
         return $this->render('index', compact('product', 'category', 'section'));
     }

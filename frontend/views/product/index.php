@@ -27,15 +27,19 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                 'data' => ArrayHelper::map(Section::find()->andWhere(['status' => 1])->all(), 'id', 'name_' . Yii::$app->language),
                 'options' => [
                     'placeholder' => Yii::t('app', 'Rukn..'),
-                    'id' => 'section-product'
+                    'id' => 'section-product',
+                    'onchange' => '$.get("' . Url::to(['/product/index']) . '", {section_id: $(this).val()})
+                        .done(function(data) {
+                            $.pjax.reload("#render-product", {timeout : false});
+                        });'
                 ]
             ]) ?>
         </div>
         <div class="col-lg-4">
             <label for="price" class="font-weight-bolder"><?= Yii::t('app', 'Narxi Sumda:') ?></label>
             <div class="d-flex">
-                <input type="text" class="form-control " id="price" placeholder="<?= Yii::t('app', '...dan') ?>" />
-                <input type="text" class="form-control  ml-md-3" placeholder="..." />
+                <input type="text" class="form-control " id="price" placeholder="<?= Yii::t('app', '...dan') ?>"/>
+                <input type="text" class="form-control  ml-md-3" placeholder="..."/>
             </div>
         </div>
         <div class="col-lg-2">
@@ -81,8 +85,9 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
     <div class="row mt-md-4">
         <div class="col sorts">
             <?php if ($section) : foreach ($section as $s) : ?>
-                    <a href="<?= Url::to(['product/index', 'section_id' => $s->id]) ?>"><b><?= $s->name_uz ?> <span class="text-danger"><?= count($s->products) ?></span></b>
-                    </a>
+                <a href="<?= Url::to(['product/index', 'section_id' => $s->id]) ?>"><b><?= $s->name_uz ?> <span
+                                class="text-danger"><?= count($s->products) ?></span></b>
+                </a>
             <?php endforeach;
             endif; ?>
         </div>
