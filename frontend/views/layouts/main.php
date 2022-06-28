@@ -9,7 +9,7 @@ use frontend\assets\AppAsset;
 use frontend\models\Section;
 use yii\bootstrap4\Html;
 
-$section = Section::find()->andWhere(['status' => 1])->orderBy(['id' => SORT_DESC])->all();
+$section = Section::find()->andWhere(['status' => 1])->orderBy(['id' => SORT_ASC])->all();
 
 AppAsset::register($this);
 ?>
