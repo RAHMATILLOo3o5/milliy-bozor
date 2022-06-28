@@ -36,6 +36,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
             ]) ?>
         </div>
         <div class="col-lg-4">
+
             <label for="price" class="font-weight-bolder"><?= Yii::t('app', 'Narxi Sumda:') ?></label>
             <div class="d-flex">
                 <input type="text" class="form-control" id="price" placeholder="<?= Yii::t('app', '...dan') ?>"/>
