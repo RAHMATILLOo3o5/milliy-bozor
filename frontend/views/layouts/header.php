@@ -229,7 +229,7 @@ $lan = Yii::$app->params['language'];
                             </div>
                         </form>
                         <div class="list-group list-group-flush shadow myStyle" style="display: none" id="search-response">
-                            <a href="#" class="list-group-item list-group-item-action">ali</a>
+                            <a href="#" class="list-group-item  list-group-item-action">ali</a>
                             <a href="#" class="list-group-item list-group-item-action">ali</a>
                             <a href="#" class="list-group-item list-group-item-action">ali</a>
                         </div>
