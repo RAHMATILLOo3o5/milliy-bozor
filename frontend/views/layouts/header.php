@@ -23,9 +23,16 @@ $lan = Yii::$app->params['language'];
 
     @media (max-width: 586px) {
         .rounded {
-            border-radius: 0px !important;
+            border-radius: 0 !important;
             border: none !important;
         }
+    }
+    #search-input{
+        position: relative !important;
+    }
+    .myStyle{
+        position: absolute !important;
+        z-index: 4;
     }
 </style>
 
@@ -64,7 +71,8 @@ $lan = Yii::$app->params['language'];
                                 <li>
                                     <a href="<?= Url::to(['/message/index']) ?>"><?= Yii::t('app', 'xabar') ?> </a>
                                 </li>
-                                <li><a href="<?= Url::to(['/site/dostavka']) ?>"><?= Yii::t('app', 'dostavka') ?></a>
+                                <li>
+                                    <a href="<?= Url::to(['/site/dostavka']) ?>"><?= Yii::t('app', 'dostavka') ?></a>
                                 </li>
                                 <li><a href="<?= Url::to(['setting/index']) ?>"><?= Yii::t('app', 'sozlama') ?></a>
                                 </li>
@@ -76,23 +84,6 @@ $lan = Yii::$app->params['language'];
                                 </li>
                                 <li><a href="<?= Url::to(['/site/logout']) ?>" data-method="post"
                                        class="back"><?= Yii::t('app', 'chiqish') ?></a></li>
-                            </ul>
-                        </div>
-                    <?php else : ?>
-                        <div class="dropdown_prof">
-                            <ul class="drop_menu">
-                                <li>
-                                    <a href="<?= Url::to(['/site/login']) ?>"
-                                       class="<?= (Yii::$app->controller->route == 'site/login') ? 'active' : ''; ?>">
-                                        <?= Yii::t('app', 'login') ?>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?= Url::to(['/site/signup']) ?>"
-                                       class="<?= (Yii::$app->controller->route == 'site/signup') ? 'active' : ''; ?>">
-                                        <?= Yii::t('app', 'sign') ?>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     <?php endif; ?>
@@ -167,7 +158,8 @@ $lan = Yii::$app->params['language'];
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= Url::to(['/product/new-product']) ?>" class="btn btn-danger font-weight-bolder">
+                            <a href="<?= Url::to(['/product/new-product']) ?>"
+                               class="btn btn-danger font-weight-bolder">
                                 <?= Yii::t('app', 'E\'lon berish') ?>
                             </a>
                         </li>
@@ -229,12 +221,18 @@ $lan = Yii::$app->params['language'];
                 </div>
                 <div class="col-lg-3 ml-lg m-0">
                     <div class="mt-lg-3">
-                        <form>
+                        <form method="get" id="parent" action="<?= Url::to(['search/index']) ?>">
                             <div class="input-group-search">
                                 <i class="fa fa-search"></i>
-                                <input type="text" class="form-input" placeholder="Qidirish..."/>
+                                <input type="text" name="q" class="form-input" id="search-input"
+                                       placeholder="<?= Yii::t('app', 'Qidirish...') ?>"/>
                             </div>
                         </form>
+                        <div class="list-group list-group-flush shadow myStyle" style="display: none" id="search-response">
+                            <a href="#" class="list-group-item list-group-item-action">ali</a>
+                            <a href="#" class="list-group-item list-group-item-action">ali</a>
+                            <a href="#" class="list-group-item list-group-item-action">ali</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -254,3 +252,4 @@ $lan = Yii::$app->params['language'];
         </div>
     </div>
 </div>
+

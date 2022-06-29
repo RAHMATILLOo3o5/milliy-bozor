@@ -5,12 +5,14 @@ namespace frontend\controllers;
 use backend\models\Banner;
 use backend\models\Dayticket;
 use backend\models\Monthticket;
+use common\models\Connect;
 use common\models\Contact;
 use common\models\Product;
 use common\models\Seen;
 use common\models\TopTime;
 use common\models\User;
 use common\models\VerifyEmail;
+use frontend\models\Dostavka;
 use frontend\models\Offer;
 use frontend\models\Policy;
 use frontend\models\ResendVerificationEmailForm;
@@ -295,6 +297,15 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * @return string
+     */
+    public function actionDostavka()
+    {
+        $content = Dostavka::find()->where(['status'=>1])->asArray()->all();
+        $connect = Connect::find()->where(['status'=>1])->all();
+        return $this->render('dostavka', compact('content', 'connect'));
+    }
     /**
      * Requests password reset.
      *

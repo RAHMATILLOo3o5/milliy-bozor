@@ -62,6 +62,7 @@ use yii\helpers\Url;
                     ['label' => 'Qo\'shimcha xizmatlar', 'url' => ['service/index'], 'icon' => 'calculator'],
                     ['label' => 'SAYT SOZLAMARI', 'header' => true],
                     ['label' => 'Banner', 'url' => ['banner/index'], 'icon' => 'image'],
+                    ['label' => 'Yetkazib berish', 'url' => ['dostavka/index'], 'icon' => 'truck'],
                     ['label' => 'Pastki qism', 'url' => ['footer/index'], 'icon' => 'arrow-down'],
                     ['label' => 'Foydalanish shartlari', 'url' => ['site/term'], 'icon' => 'users'],
                     ['label' => 'Maxfiylik siyosati', 'url' => ['site/policy'], 'iconStyle'=>'fas', 'icon' => 'hand-point-up']
