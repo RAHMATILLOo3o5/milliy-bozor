@@ -7,10 +7,10 @@ $icon = Footer::find()->where(['status' => 1])->one();
 $footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
 
 ?>
-<div class="danger p-4 mb-4"></div>
+<div class="danger p-4 "></div>
 <div class="footer my-sm-5">
     <div class="px-lg-6">
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-3">
                 <a href="<?= Url::home() ?>"><img src="<?= Yii::getAlias('@defaultImgPath') ?>/Component 1.svg"
                                                   alt="logo" class="my-2 w-50"></a>
