@@ -232,6 +232,7 @@ $lan = Yii::$app->params['language'];
                         </form>
                         <div class="list-group list-group-flush shadow myStyle" style="display: none"
                              id="search-response">
+
                         </div>
                     </div>
                 </div>
