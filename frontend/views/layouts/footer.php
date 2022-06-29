@@ -70,7 +70,7 @@ $footer = Footer::find()->where(['id' => $icon->id])->asArray()->one();
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p style="color: #5a5658">© 2022 Milliy Bozor - All rights reserved. Powered by <a href="https://t.me/Rahmatillo_2oo5">Rahmatillo Husanboyev</a></p>
+                <p style="color: #5a5658">© 2022 Milliy Bozor - All rights reserved. Powered by <a href="https://t.me/Rahmatillo_2oo5" target="_blank">Rahmatillo Husanboyev</a></p>
             </div>
         </div>
     </div>
