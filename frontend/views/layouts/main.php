@@ -58,13 +58,16 @@ $js = <<<JS
       var searchResponse = $( "#search-response" );
       if (inpVal !== ''){
           searchResponse.css('width', form[0].clientWidth+'px')
-          searchResponse.show("slow");
           $.ajax({
             url:form.attr('action'),
             type:"GET",
             data:{q: inpVal},
             success:function(data) {
-              console.log(data);
+              if (data.status === 200){
+                  searchResponse.html(data.content);
+                  searchResponse.show("slow");
+
+              }
             }
           });
       } else {

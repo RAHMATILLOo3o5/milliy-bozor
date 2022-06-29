@@ -9,7 +9,7 @@
  * Each array element represents the translation (value) of a message (key).
  * If the value is empty, the message is considered as not translated.
  * Messages that no longer need translation will have their translations
- * enclosed between a pair of '@@' marks.
+ * enclosed between a pair of '' marks.
  *
  * Message string can be used with plural forms format. Check i18n section
  * of the guide for details.
@@ -186,7 +186,7 @@ return [
     'batafsil' => 'Batafsil',
     'chiqish' => 'Chiqish',
     'dostavka' => 'Dostavka xizmati',
-    'elon' => '@@E\'lon berish@@',
+    'elon' => 'E\'lon berish',
     'gacha' => '',
     'haqida fikringiz' => '',
     'home' => 'Bosh menu',
@@ -197,25 +197,25 @@ return [
 
     Endi saralangan e‘lonlar Mening e‘lonlarimga kirish amalga oshirilganidan so‘ng, saytning mobil ko‘rinishida shuningdek,barcha kompyuterlar orqali doim qo‘l ostingizda',
     'narx' => 'Narxlar',
-    'new' => '@@Yangi tovarlar@@',
-    'noproduct' => '@@Hech qanday e\'lon mavjud emas@@',
-    'nosection' => '@@Toifalar mavjud emas!@@',
-    'obuna' => '@@Obunalar@@',
-    'old' => '@@Eski tovarlar@@',
+    'new' => 'Yangi tovarlar',
+    'noproduct' => 'Hech qanday e\'lon mavjud emas',
+    'nosection' => 'Toifalar mavjud emas!',
+    'obuna' => 'Obunalar',
+    'old' => 'Eski tovarlar',
     'olish' => 'Hoziroq sotib olish',
     'oy' => '',
     'parol' => 'Parol',
-    'pelon' => '@@Premium E\'lonlar@@',
+    'pelon' => 'Premium E\'lonlar',
     'pro' => 'Premium',
     'profil' => 'Mening profilim',
-    'qidir' => '@@Qidirish@@',
+    'qidir' => 'Qidirish',
     'saralangan' => 'Saralanganlar',
     'shaxsiy' => 'Shaxsiy ma\'lumotlar',
     'sign' => 'Ro\'yhatdan o\'tish',
     'sozlama' => 'Sozlamalar',
-    'taklif' => '@@Maxsus taklif@@',
-    'toifa' => '@@Toifalar@@',
-    'top' => '@@TOP tovarlar@@',
+    'taklif' => 'Maxsus taklif',
+    'toifa' => 'Toifalar',
+    'top' => 'TOP tovarlar',
     'xabar' => 'Xabarlar',
-    'xizmat' => '@@Qo\'shimcha xizmatlar@@',
+    'xizmat' => 'Qo\'shimcha xizmatlar',
 ];

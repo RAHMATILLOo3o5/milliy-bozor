@@ -5,15 +5,18 @@ namespace frontend\controllers;
 use backend\models\Category;
 use common\models\Message;
 use common\models\Product;
+use frontend\models\Offer;
 use frontend\models\search\ProductQuery;
 use common\models\Seen;
 use common\models\TopTime;
 use common\models\User;
 use common\models\View;
 use frontend\models\Section;
+use frontend\models\Service;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
 
 class ProductController extends \yii\web\Controller
 {
@@ -236,6 +239,25 @@ class ProductController extends \yii\web\Controller
             'model' => $model,
             'user' => $user,
         ]);
+    }
+
+    /**
+     * @return array|void
+     */
+    public function actionSearch()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        if ($this->request->isAjax) {
+            $q = Yii::$app->request->get('q');
+            $product = Product::find()->andFilterWhere(['like', 'name', trim($q, ' ')])->andWhere(['status' => 1])->all();
+            $offer = Offer::find()->andFilterWhere(['like', 'title_' . Yii::$app->language, trim($q, ' ')])->andWhere(['status' => 1])->all();
+            $service = Service::find()->andFilterWhere(['like', 'title_' . Yii::$app->language, trim($q, ' ')])->andWhere(['status' => 1])->all();
+            $data = [
+                'status' => 200,
+                'content' => $this->renderAjax('_search', compact('product', 'offer', 'service', 'q')),
+            ];
+            return $data;
+        }
     }
 
     public function findModel($id)

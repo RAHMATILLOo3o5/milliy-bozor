@@ -27,10 +27,12 @@ $lan = Yii::$app->params['language'];
             border: none !important;
         }
     }
-    #search-input{
+
+    #search-input {
         position: relative !important;
     }
-    .myStyle{
+
+    .myStyle {
         position: absolute !important;
         z-index: 4;
     }
@@ -220,18 +222,16 @@ $lan = Yii::$app->params['language'];
                     </div>
                 </div>
                 <div class="col-lg-3 ml-lg m-0">
-                    <div class="mt-lg-3">
-                        <form method="get" id="parent" action="<?= Url::to(['search/index']) ?>">
+                    <div class="mt-lg-3 my-3">
+                        <form method="get" id="parent" action="<?= Url::to(['product/search']) ?>">
                             <div class="input-group-search">
                                 <i class="fa fa-search"></i>
-                                <input type="text" name="q" class="form-input" id="search-input"
+                                <input type="text" name="q" class="form-input" id="search-input" autocomplete="off"
                                        placeholder="<?= Yii::t('app', 'Qidirish...') ?>"/>
                             </div>
                         </form>
-                        <div class="list-group list-group-flush shadow myStyle" style="display: none" id="search-response">
-                            <a href="#" class="list-group-item  list-group-item-action">ali</a>
-                            <a href="#" class="list-group-item list-group-item-action">ali</a>
-                            <a href="#" class="list-group-item list-group-item-action">ali</a>
+                        <div class="list-group list-group-flush shadow myStyle" style="display: none"
+                             id="search-response">
                         </div>
                     </div>
                 </div>
