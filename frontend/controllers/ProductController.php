@@ -110,6 +110,15 @@ class ProductController extends \yii\web\Controller
             return $this->renderAjax('user', [
                 'users' => $users,
             ]);
+        } else if ($this->request->get('q')){
+            $q = trim($this->request->get('q'), ' ');
+            $product = new ActiveDataProvider([
+                'query' => Product::find()->where(['status' => '1'])->andWhere(['like', 'name', $q]),
+                'pagination' => [
+                    'pageSize' => 12
+                ],
+            ]);
+
         } else {
             $product = new ActiveDataProvider([
                 'query' => Product::find()->where(['status' => '1'])->orderBy(['id' => SORT_DESC]),

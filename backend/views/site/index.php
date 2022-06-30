@@ -3,72 +3,67 @@ $this->title = Yii::$app->name;
 $this->params['breadcrumbs'] = [['label' => $this->title]];
 ?>
 <div class="container-fluid">
-
     <div class="row">
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Xabarlar',
-                'number' => '1,410',
-                'icon' => 'far fa-envelope',
-            ]) ?>
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>150</h3>
+
+                    <p>New Orders</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Bookmarks',
-                'number' => '410',
-                'theme' => 'success',
-                'icon' => 'far fa-flag',
-            ]) ?>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>Bounce Rate</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\InfoBox::widget([
-                'text' => 'Uploads',
-                'number' => '13,648',
-                'theme' => 'gradient-warning',
-                'icon' => 'far fa-copy',
-            ]) ?>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>44</h3>
+
+                    <p>User Registrations</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
         </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>65</h3>
+
+                    <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
     </div>
 
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\SmallBox::widget([
-                'title' => '150',
-                'text' => 'Oddiy e\'lonlar',
-                'icon' => 'fas fa-shopping-cart',
-                'theme' => 'gradient-secondary',
-                'linkText' => 'Batafsil',
-                'linkUrl' => '#',
-            ]) ?>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?php $smallBox = \hail812\adminlte\widgets\SmallBox::begin([
-                'title' => '150',
-                'text' => 'Premium e\'lonlar',
-                'icon' => 'fas fa-shopping-cart',
-                'linkText' => 'Batafsil',
-                'theme' => 'success',
-                'linkUrl' => '#',
-            ]) ?>
-            <?= \hail812\adminlte\widgets\Ribbon::widget([
-                'id' => $smallBox->id . '-ribbon',
-                'text' => 'Premium',
-                'theme' => 'warning',
-                'size' => 'lg',
-                'textSize' => 'lg',
-
-            ]) ?>
-            <?php \hail812\adminlte\widgets\SmallBox::end() ?>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <?= \hail812\adminlte\widgets\SmallBox::widget([
-                'title' => '44',
-                'text' => 'Foydalanuvchilar',
-                'icon' => 'fas fa-user-plus',
-                'linkText' => 'Batafsil',
-                'theme' => 'gradient-warning',
-                'linkUrl' => '#',
-            ]) ?>
-        </div>
-    </div>
 </div>
