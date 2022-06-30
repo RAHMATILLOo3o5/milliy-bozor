@@ -104,7 +104,7 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                     'class' => 'sorts my-4 row justify-content-lg-around'
                 ],
                 'itemOptions' => [
-                    'class' => 'col-lg-3 col-md-4 col-sm-6 p-2'
+                    'class' => 'col-lg-2 col-md-3 col-sm-5 p-2'
                 ],
                 'emptyText' => '',
                 'layout' => "{items}\n",
