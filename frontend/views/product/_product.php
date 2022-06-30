@@ -12,7 +12,7 @@ echo ListView::widget([
     'options' => [
         'class' => 'row mt-md-4'
     ],
-    'emptyText' => '<div class="col-lg-8 text-center">
+    'emptyText' => '<div class="col-lg-12 text-center">
                <img src="' . Yii::getAlias('@defaultImgPath') . '/undraw_inspiration_lecl 1.svg" alt="">
                   <h3 class="my-sm-5">' . Yii::t('app', 'E\'lonlar topilmadi') . '😥</h3>
            </div>',
