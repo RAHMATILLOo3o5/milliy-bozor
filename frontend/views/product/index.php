@@ -19,6 +19,28 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
 ?>
 
 <div class="body px-lg-6 my-sm-5">
+    <?php if (Yii::$app->request->get('q') && !empty(Yii::$app->request->get('q'))) : ?>
+        <div class="row my-sm-3">
+            <div class="col-12">
+                <div class="alert alert-success alert-dismissible d-none" id="success" role="alert">
+                    <strong><?= Yii::t('app', 'Qidiruvga saqlandi!') ?></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <b style="font-size: 17px"><?= Yii::t('app', 'Sizning qidiruvingiz bo\'yicha topilgan e\'lonlar soni') . ' -  ' . $product->count ?></b>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="<?= Url::to(['component/search-like', 'q' => Yii::$app->request->get('q')]) ?>"
+                   class="btn btn-danger search-like">
+                    <?= Yii::t('app', 'Qidiruvni saqlash') ?>
+                    <i class="fa fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    <?php endif; ?>
     <div class="row mt-lg-3">
         <div class="col-lg-2">
             <label for="caty" class="font-weight-bolder"><?= Yii::t('app', 'Rukn:') ?></label>
@@ -103,7 +125,10 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
                 'options' => [
                     'class' => 'sorts my-4 row'
                 ],
-                'emptyText' => 'p-2',
+                'itemOptions' => [
+                    'class' => 'p-2'
+                ],
+                'emptyText' => '',
                 'layout' => "{items}\n",
             ]) ?>
         </div>
@@ -123,4 +148,21 @@ $this->title = Yii::t('app', 'Barcha E\'lonlar') . ' - Milliy Bozor';
     <?= $this->render('_product', compact('product')) ?>
     <?php \yii\widgets\Pjax::end(); ?>
 </div>
+<?php
+$js = <<<JS
+    $('.search-like').click(function(e) {
+      e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'POST',
+            success: function(data) {
+                if (data.status === 'success') {
+                    $('#success').removeClass('d-none');
+                }
+            }
+        });
+    });
+JS;
+$this->registerJs($js);
+?>
 

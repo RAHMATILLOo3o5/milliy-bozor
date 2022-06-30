@@ -25,6 +25,9 @@ use yii\widgets\Pjax;
             <a href="<?= Url::to(['/product/updated', 'id' => $model->slug]) ?>" class="card-link" data-toggle="tooltip" data-placement="right" title="<?= Yii::t('app', 'Tahrirlash') ?>">
                 <i class="fa-solid fa-pen text-primary"></i>
             </a>
+            <a href="<?= Url::to(['/product/delete', 'id' => $model->slug]) ?>" class="card-link">
+                <i class="fa-solid fa-trash-can text-danger"></i>
+            </a>
         </div>
         <b> <?= $model->user->province->name ?> <i class=" fa-solid fa-location-dot"></i></b>
         <p class="card-text mt-sm-5">

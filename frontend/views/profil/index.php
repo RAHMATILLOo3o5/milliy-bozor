@@ -55,7 +55,7 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
 <div class="px-lg-6">
     <div class="tab-content my-2 my-sm-5">
         <div class="tab-pane fade show active" id="like" role="tabpanel" aria-labelledby="like-tab">
-            <div class="row">
+            <div class="row <?= ($like->count == 0) ? 'd-none' : ''; ?>">
                 <div class="col-12">
                     <a href="<?= \yii\helpers\Url::to(['profil/clear']) ?>"
                        class="btn btn-danger <?= ($like->count == 0) ? 'disabled' : ''; ?>"><i
@@ -82,14 +82,14 @@ $html = '<div class="col-lg-8 text-center py-sm-5 offset-lg-2">
         <div class="tab-pane fade " id="search" role="tabpanel" aria-labelledby="search-tab">
             <?= ListView::widget([
                 'dataProvider' => $search,
-                'itemView' => '_like',
+                'itemView' => 'search',
                 'layout' => "{items}\n{pager}",
                 'options' => [
                     'class' => 'row my-2 my-sm-5 view'
                 ],
                 'emptyText' => $html,
                 'itemOptions' => [
-                    'class' => 'col-md-3'
+                    'class' => 'col-md-8 offset-md-2'
                 ],
                 'pager' => [
                     'class' => \yii\bootstrap4\LinkPager::class

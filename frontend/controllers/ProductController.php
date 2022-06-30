@@ -251,7 +251,7 @@ class ProductController extends \yii\web\Controller
     }
 
     /**
-     * @return array|void
+     * @return array|Response
      */
     public function actionSearch()
     {
@@ -266,6 +266,8 @@ class ProductController extends \yii\web\Controller
                 'content' => $this->renderAjax('_search', compact('product', 'offer', 'service', 'q')),
             ];
             return $data;
+        } else {
+            return $this->redirect(['product/index', 'q' => Yii::$app->request->get('q')]);
         }
     }
 

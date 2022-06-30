@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use backend\models\Category;
 use common\models\Like;
 use common\models\Province;
+use common\models\SearchLike;
 use common\models\TopTime;
 use common\models\Tumanlar;
 use Yii;
@@ -123,6 +124,31 @@ class ComponentController extends \yii\web\Controller
             return ['status' => 'success'];
         } else {
             return ['status' => 'error'];
+        }
+    }
+
+    public function actionSearchLike()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        if (!Yii::$app->user->isGuest) {
+            $model = new SearchLike();
+            if ($model->saved(Yii::$app->request->get('q'))) {
+                return ['status' => 'success'];
+            } else {
+                return ['status' => $model->getErrors()];
+            }
+        } else {
+            return $this->redirect(['/site/login']);
+        }
+    }
+    public function actionDeleteSearch($id)
+    {
+        $model = SearchLike::findOne($id);
+        if ($model->delete()) {
+            return $this->redirect($this->request->referrer);
+        } else {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'O\'chirilmadi!'));
+            return $this->redirect($this->request->referrer);
         }
     }
 }

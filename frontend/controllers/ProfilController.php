@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Like;
 use common\models\Product;
+use common\models\SearchLike;
 use common\models\Seen;
 use common\models\TopTime;
 use common\models\View;
@@ -75,7 +76,15 @@ class ProfilController extends \yii\web\Controller
             ]
         ]);
         $search = new ActiveDataProvider([
-            'query' => Product::find()->andWhere(['status' => 0])
+            'query' => SearchLike::find()->andWhere(['user_id' => Yii::$app->user->id]),
+            'pagination' => [
+                'pageSize' => 20
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
         ]);
         return $this->render('index', [
             'like' => $likeProduct,
