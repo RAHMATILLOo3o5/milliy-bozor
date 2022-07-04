@@ -15,7 +15,8 @@ class AppAsset extends AssetBundle
         'plugins/fontawesome-free/css/all.css',
         'plugins/bootstrap/dist/css/bootstrap.css',
         'css/style.css',
-        'css/main.css'
+        'css/main.css',
+        'css/site.css'
     ];
     public $js = [
         'plugins/popper.js/dist/popper.js',

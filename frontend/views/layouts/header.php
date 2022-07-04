@@ -227,7 +227,7 @@ $lan = Yii::$app->params['language'];
                             <div class="input-group-search">
                                 <i class="fa fa-search"></i>
                                 <input type="text" name="q" class="form-input" id="search-input" autocomplete="off"
-                                       placeholder="<?= Yii::t('app', 'Qidirish...') ?>"/>
+                                       placeholder="<?= Yii::t('app', 'Qidirish...') ?>" autofocus/>
                             </div>
                         </form>
                         <div class="list-group list-group-flush shadow myStyle" style="display: none"

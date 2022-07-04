@@ -21,8 +21,7 @@
         "kartik-v/yii2-widgets": "dev-master",
         "himiklab/yii2-recaptcha-widget": "*",
         "mihaildev/yii2-ckeditor": "*",
-        "hail812/yii2-adminlte3": "~1.1",
-        "kartik-v/yii2-editors": "dev-master"
+        "hail812/yii2-adminlte3": "~1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

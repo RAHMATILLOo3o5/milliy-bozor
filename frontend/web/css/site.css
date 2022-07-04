@@ -1,0 +1,38 @@
+.my-carousel2 .carousel-inner {
+    padding: 15px 25px;
+}
+
+.my-carousel2 .carousel-inner .carousel-item .my-item {
+    margin: 10px 0;
+    padding: 10px 0 30px 0;
+}
+
+.my-carousel2 .carousel-inner .carousel-item .my-item {
+    display: flex;
+    -webkit-align-items: flex-end;
+}
+.offer-info {
+    margin-bottom: 150px;
+}
+.my-carousel2 .carousel-indicators {
+    margin-top: 120px !important;
+}
+.carousel-img {
+    overflow: hidden !important;
+    width: 350px;
+    height: 481px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.carousel-img img{
+    height: 100% !important;
+}
+@media screen and (max-width: 1400px){
+    .offer-info{
+        margin-bottom: 75px;
+    }
+    .offer-info h1{
+        font-size: 30px;
+    }
+}
